@@ -1,0 +1,56 @@
+name: Render
+provider: Render
+category: cloud_infrastructure
+website: https://render.com
+pricing_url: https://render.com/pricing
+description: Web services, static sites, PostgreSQL, cron jobs, background workers
+
+free_tier:
+  - name: Static Sites
+    value: 100
+    unit: GB bandwidth/month
+  - name: Web Services
+    value: 750
+    unit: hours/month
+    notes: Free instance spins down after inactivity
+  - name: PostgreSQL
+    value: 256
+    unit: MB
+    notes: Free database expires after 90 days
+  - name: Cron Jobs
+    value: 1
+    unit: job
+
+signup:
+  url: https://dashboard.render.com/register
+  method: github_oauth
+  requires: github
+  steps:
+    - Go to dashboard.render.com/register
+    - Click "GitHub" to sign up
+    - Authorize Render
+    - Complete the onboarding steps
+
+credentials:
+  - name: RENDER_API_KEY
+    env_var: RENDER_API_KEY
+    type: api_key
+    how_to_get:
+      url: https://dashboard.render.com/u/settings#api-keys
+      steps:
+        - Go to dashboard.render.com/u/settings
+        - Scroll to "API Keys"
+        - Click "Create API Key"
+        - Name it "ubc-key"
+        - Copy the key
+    validation: "^rnd_[a-zA-Z0-9]{24,}$"
+
+provides:
+  - hosting
+  - web_services
+  - database
+  - cron_jobs
+  - background_workers
+
+depends_on:
+  - github

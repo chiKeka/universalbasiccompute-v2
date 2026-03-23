@@ -1,0 +1,51 @@
+name: Neon
+provider: Neon
+category: data_storage
+website: https://neon.tech
+pricing_url: https://neon.tech/pricing
+description: Serverless Postgres with branching, auto-scaling, and generous free tier
+
+free_tier:
+  - name: Storage
+    value: 512
+    unit: MB
+  - name: Compute Hours
+    value: 191
+    unit: hours/month
+    notes: ~24/7 on smallest compute size
+  - name: Branches
+    value: 10
+    unit: branches
+  - name: Projects
+    value: 1
+    unit: project
+
+signup:
+  url: https://console.neon.tech/signup
+  method: github_oauth
+  steps:
+    - Go to console.neon.tech/signup
+    - Click "Continue with GitHub" (or use email)
+    - Authorize Neon
+    - Create your first project (pick a region close to you)
+    - Your database is ready in seconds!
+
+credentials:
+  - name: DATABASE_URL
+    env_var: DATABASE_URL
+    type: connection_string
+    how_to_get:
+      url: https://console.neon.tech
+      steps:
+        - In your Neon dashboard, click on your project
+        - Click "Connection Details" in the sidebar
+        - Copy the connection string
+        - It looks like postgresql://user:pass@host/dbname
+    validation: "^postgres(ql)?://.*@.*\\.neon\\.tech/.*$"
+
+provides:
+  - database
+  - serverless_postgres
+  - branching
+
+depends_on: []

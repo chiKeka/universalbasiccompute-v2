@@ -38,6 +38,11 @@ Each YAML file has: signup steps, credential instructions, free-tier limits.
 - **Supabase** — Postgres, Auth, Edge Functions (500MB DB)
 - **OpenAI** — GPT, embeddings ($5 free credits)
 - **Cloudflare** — Workers, Pages, R2 (100k req/day)
+- **Netlify** — Hosting, forms, edge (100GB bandwidth/mo)
+- **Render** — Web services, Postgres (750 hrs/mo)
+- **Neon** — Serverless Postgres (512MB, branching)
+- **Resend** — Email API (3000 emails/mo)
+- **Upstash** — Serverless Redis (10k commands/day)
 
 ## Available Recipes (in `/recipes/`)
 

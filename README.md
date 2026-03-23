@@ -17,12 +17,17 @@ Clone this repo. Open it in any AI coding tool. The agents do the rest.
 | Catalog | Keeps the free-tier service list up to date |
 | Infra | Helps set up agent infrastructure (OpenClaw, etc.) |
 
-**5 Free-Tier Services** ready to provision:
+**10 Free-Tier Services** ready to provision:
 - GitHub (code hosting, CI/CD)
 - Vercel (hosting, serverless)
 - Supabase (database, auth)
 - OpenAI (AI/GPT)
 - Cloudflare (CDN, workers, storage)
+- Netlify (hosting, forms, edge)
+- Render (web services, Postgres)
+- Neon (serverless Postgres)
+- Resend (email API)
+- Upstash (serverless Redis)
 
 **5 Project Recipes** you can build today:
 - Blog with AI summarization
@@ -61,6 +66,13 @@ Add this to your MCP config:
 ```
 
 Your agent now has access to the full UBC toolkit.
+
+### With Docker
+```bash
+git clone https://github.com/chiKeka/universalbasiccompute-v2.git
+cd universalbasiccompute-v2
+ANTHROPIC_API_KEY=sk-ant-... docker compose up
+```
 
 ### Manual
 ```bash

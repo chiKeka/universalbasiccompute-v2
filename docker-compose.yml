@@ -1,0 +1,12 @@
+services:
+  ubc:
+    build: .
+    volumes:
+      - ./.ubc:/app/.ubc      # Persist state and credentials
+      - ./services:/app/services  # Allow editing services
+      - ./recipes:/app/recipes    # Allow editing recipes
+      - ./agents:/app/agents      # Allow editing agents
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    stdin_open: true
+    tty: true

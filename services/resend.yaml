@@ -1,0 +1,48 @@
+name: Resend
+provider: Resend
+category: api_services
+website: https://resend.com
+pricing_url: https://resend.com/pricing
+description: Email API for developers — send transactional and marketing emails
+
+free_tier:
+  - name: Emails
+    value: 3000
+    unit: per month
+    notes: 100 emails/day limit
+  - name: Domains
+    value: 1
+    unit: custom domain
+  - name: API Keys
+    value: 1
+    unit: key
+
+signup:
+  url: https://resend.com/signup
+  method: github_oauth
+  steps:
+    - Go to resend.com/signup
+    - Click "Continue with GitHub" (or use email)
+    - Verify your email if prompted
+    - You'll land on the Resend dashboard
+
+credentials:
+  - name: RESEND_API_KEY
+    env_var: RESEND_API_KEY
+    type: api_key
+    how_to_get:
+      url: https://resend.com/api-keys
+      steps:
+        - Go to resend.com/api-keys
+        - Click "Create API Key"
+        - Name it "ubc-key"
+        - Set permission to "Sending access"
+        - Click "Add"
+        - Copy the key (starts with re_)
+    validation: "^re_[a-zA-Z0-9]{20,}$"
+
+provides:
+  - email_api
+  - transactional_email
+
+depends_on: []

@@ -1,0 +1,63 @@
+name: Upstash
+provider: Upstash
+category: data_storage
+website: https://upstash.com
+pricing_url: https://upstash.com/pricing
+description: Serverless Redis and Kafka with per-request pricing and generous free tier
+
+free_tier:
+  - name: Redis Commands
+    value: 10000
+    unit: per day
+  - name: Redis Storage
+    value: 256
+    unit: MB
+  - name: Kafka Messages
+    value: 10000
+    unit: per day
+  - name: QStash Messages
+    value: 500
+    unit: per day
+    notes: Serverless message queue and task scheduling
+
+signup:
+  url: https://console.upstash.com/login
+  method: github_oauth
+  steps:
+    - Go to console.upstash.com/login
+    - Click "Sign up with GitHub"
+    - Authorize Upstash
+    - You'll see your Upstash console
+
+credentials:
+  - name: UPSTASH_REDIS_REST_URL
+    env_var: UPSTASH_REDIS_REST_URL
+    type: connection_string
+    how_to_get:
+      url: https://console.upstash.com
+      steps:
+        - Click "Create Database"
+        - Name it "ubc-redis"
+        - Pick a region close to you
+        - Click "Create"
+        - In the database details, find "REST API" section
+        - Copy the UPSTASH_REDIS_REST_URL
+    validation: "^https://.*\\.upstash\\.io$"
+
+  - name: UPSTASH_REDIS_REST_TOKEN
+    env_var: UPSTASH_REDIS_REST_TOKEN
+    type: api_key
+    how_to_get:
+      url: https://console.upstash.com
+      steps:
+        - In the same database details page
+        - Copy the UPSTASH_REDIS_REST_TOKEN
+    validation: "^[a-zA-Z0-9_-]{30,}$"
+
+provides:
+  - redis
+  - cache
+  - message_queue
+  - rate_limiting
+
+depends_on: []

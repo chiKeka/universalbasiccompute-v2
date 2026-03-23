@@ -1,0 +1,59 @@
+name: Netlify
+provider: Netlify
+category: cloud_infrastructure
+website: https://netlify.com
+pricing_url: https://www.netlify.com/pricing/
+description: Web hosting, serverless functions, forms, identity, edge functions
+
+free_tier:
+  - name: Bandwidth
+    value: 100
+    unit: GB/month
+  - name: Build Minutes
+    value: 300
+    unit: minutes/month
+  - name: Serverless Functions
+    value: 125000
+    unit: invocations/month
+  - name: Forms
+    value: 100
+    unit: submissions/month
+  - name: Identity
+    value: 1000
+    unit: active users
+
+signup:
+  url: https://app.netlify.com/signup
+  method: github_oauth
+  requires: github
+  steps:
+    - Go to app.netlify.com/signup
+    - Click "GitHub" to sign up with your GitHub account
+    - Authorize Netlify
+    - You're in! You'll see your Netlify dashboard
+
+credentials:
+  - name: NETLIFY_AUTH_TOKEN
+    env_var: NETLIFY_AUTH_TOKEN
+    type: api_token
+    how_to_get:
+      url: https://app.netlify.com/user/applications#personal-access-tokens
+      steps:
+        - Go to app.netlify.com/user/applications
+        - Scroll to "Personal access tokens"
+        - Click "New access token"
+        - Name it "ubc-token"
+        - Click "Generate token"
+        - Copy the token immediately
+    validation: "^[a-zA-Z0-9_-]{40,}$"
+
+provides:
+  - hosting
+  - serverless_functions
+  - forms
+  - identity
+  - edge_functions
+  - ci_cd
+
+depends_on:
+  - github
