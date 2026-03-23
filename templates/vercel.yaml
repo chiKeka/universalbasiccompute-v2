@@ -1,0 +1,88 @@
+service: vercel
+display_name: Vercel
+category: cloud_infrastructure
+signup_url: https://vercel.com/signup
+auth_methods:
+  - github_oauth
+  - email_password
+
+steps:
+  - name: navigate_signup
+    action: goto
+    url: https://vercel.com/signup
+    wait_for: "text=Continue with GitHub"
+
+  - name: github_oauth
+    action: click
+    selector: "a:has-text('Continue with GitHub'), button:has-text('Continue with GitHub')"
+    requires: github_authenticated
+    wait_for: "url_contains=vercel.com"
+
+  - name: skip_onboarding
+    action: click
+    selector: "button:has-text('Skip'), a:has-text('Skip')"
+    optional: true
+
+  - name: navigate_dashboard
+    action: goto
+    url: https://vercel.com/dashboard
+    wait_for: "text=Overview"
+
+credentials:
+  - name: VERCEL_TOKEN
+    type: api_key
+    location: settings
+    path: https://vercel.com/account/tokens
+    extraction:
+      method: create_and_capture
+      steps:
+        - name: navigate_tokens
+          action: goto
+          url: https://vercel.com/account/tokens
+
+        - name: click_create
+          action: click
+          selector: "button:has-text('Create'), a:has-text('Create Token')"
+
+        - name: set_token_name
+          action: fill
+          selector: "input[name='name'], input[placeholder*='token']"
+          value: "ubc-deploy-token"
+
+        - name: select_scope
+          action: click
+          selector: "button:has-text('Full Account')"
+          optional: true
+
+        - name: create_token
+          action: click
+          selector: "button:has-text('Create Token'), button[type='submit']"
+
+        - name: capture_token
+          action: capture
+          selector: "input[readonly], code, [data-testid='created-token'], .geist-snippet"
+
+provides:
+  - hosting
+  - serverless_functions
+  - edge_functions
+  - ci_cd
+  - preview_deployments
+
+dependencies:
+  - github
+
+free_tier:
+  limits:
+    - name: Bandwidth
+      value: 100
+      unit: GB/month
+    - name: Serverless Function Execution
+      value: 100
+      unit: GB-hours/month
+    - name: Build Minutes
+      value: 6000
+      unit: minutes/month
+    - name: Deployments
+      value: 100
+      unit: per day

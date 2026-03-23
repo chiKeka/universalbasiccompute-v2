@@ -7,15 +7,24 @@ export const catalogCommand = new Command("catalog")
 catalogCommand
   .command("list")
   .description("List all services in the catalog")
-  .action(async () => {
-    // TODO: Query compute_sources table
-    console.log("UBCI Service Catalog");
-    console.log("====================");
-    console.log("1. GitHub        — cloud_infrastructure — CI/CD, repos, Codespaces");
-    console.log("2. Vercel        — cloud_infrastructure — Hosting, serverless");
-    console.log("3. Supabase      — cloud_infrastructure — Postgres, Auth, Edge Functions");
-    console.log("4. OpenAI API    — ai_llm              — GPT, embeddings, DALL-E");
-    console.log("5. Cloudflare    — cloud_infrastructure — CDN, Workers, R2, D1");
+  .option("-c, --category <cat>", "Filter by category")
+  .action(async (opts) => {
+    const { getCatalog } = await import("../mcp/catalog-data.js");
+    const catalog = getCatalog(opts.category);
+    console.log("\nUBCI Service Catalog");
+    console.log("=" .repeat(70));
+    for (let i = 0; i < catalog.length; i++) {
+      const s = catalog[i];
+      const limits = s.free_tier
+        .map((l: { limit: string; value: number; unit: string }) => `${l.limit}: ${l.value} ${l.unit}`)
+        .join(", ");
+      const pad = s.name.padEnd(14);
+      console.log(`  ${i + 1}. ${pad} [${s.category}]`);
+      console.log(`     ${s.description}`);
+      console.log(`     Free: ${limits}`);
+      console.log();
+    }
+    console.log(`${catalog.length} services tracked.`);
   });
 
 catalogCommand

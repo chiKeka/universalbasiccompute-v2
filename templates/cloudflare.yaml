@@ -1,0 +1,125 @@
+service: cloudflare
+display_name: Cloudflare
+category: cloud_infrastructure
+signup_url: https://dash.cloudflare.com/sign-up
+auth_methods:
+  - email_password
+
+steps:
+  - name: navigate_signup
+    action: goto
+    url: https://dash.cloudflare.com/sign-up
+    wait_for: "text=Sign up"
+
+  - name: enter_email
+    action: fill
+    selector: "input[id='email'], input[type='email']"
+    value: "{{user_email}}"
+
+  - name: enter_password
+    action: fill
+    selector: "input[id='password'], input[type='password']"
+    value: "{{generated_password}}"
+
+  - name: submit_signup
+    action: click
+    selector: "button:has-text('Sign up'), button[type='submit']"
+
+  - name: verify_email
+    action: wait
+    wait_for: "user_action"
+    timeout_ms: 300000
+
+  - name: skip_domain_setup
+    action: click
+    selector: "a:has-text('Skip'), button:has-text('Skip')"
+    optional: true
+
+  - name: navigate_dashboard
+    action: goto
+    url: https://dash.cloudflare.com
+    wait_for: "text=Home"
+
+credentials:
+  - name: CLOUDFLARE_API_TOKEN
+    type: api_key
+    location: settings
+    path: https://dash.cloudflare.com/profile/api-tokens
+    extraction:
+      method: create_and_capture
+      steps:
+        - name: navigate_tokens
+          action: goto
+          url: https://dash.cloudflare.com/profile/api-tokens
+
+        - name: click_create
+          action: click
+          selector: "button:has-text('Create Token')"
+
+        - name: use_template
+          action: click
+          selector: "button:has-text('Use template'):near(:text('Edit Cloudflare Workers'))"
+          optional: true
+
+        - name: click_continue
+          action: click
+          selector: "button:has-text('Continue to summary')"
+
+        - name: create_token
+          action: click
+          selector: "button:has-text('Create Token')"
+
+        - name: capture_token
+          action: capture
+          selector: "code, input[readonly], [data-testid='api-token']"
+
+  - name: CLOUDFLARE_ACCOUNT_ID
+    type: api_key
+    location: dashboard
+    path: https://dash.cloudflare.com
+    extraction:
+      method: navigate_and_read
+      steps:
+        - name: navigate_workers
+          action: goto
+          url: https://dash.cloudflare.com/workers-and-pages
+
+        - name: capture_account_id
+          action: capture
+          selector: "[data-testid='account-id'], code:has-text('-')"
+
+provides:
+  - cdn
+  - workers
+  - pages
+  - r2_storage
+  - d1_database
+  - kv_storage
+  - dns
+
+free_tier:
+  limits:
+    - name: Workers Requests
+      value: 100000
+      unit: per day
+    - name: Pages Builds
+      value: 500
+      unit: per month
+    - name: R2 Storage
+      value: 10
+      unit: GB/month
+    - name: R2 Operations (Class A)
+      value: 1000000
+      unit: per month
+    - name: R2 Operations (Class B)
+      value: 10000000
+      unit: per month
+    - name: D1 Database
+      value: 5
+      unit: GB
+    - name: D1 Reads
+      value: 5000000
+      unit: per day
+    - name: KV Reads
+      value: 100000
+      unit: per day

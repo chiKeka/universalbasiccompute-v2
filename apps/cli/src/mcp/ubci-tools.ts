@@ -5,71 +5,7 @@
 
 import { createSdkMcpServer, tool } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
-
-// Placeholder catalog data (will be replaced with Supabase queries in Phase 2)
-const CATALOG = [
-  {
-    name: "GitHub",
-    provider: "GitHub",
-    category: "cloud_infrastructure",
-    pricing_url: "https://github.com/pricing",
-    description: "Code hosting, CI/CD with Actions (2000 min/mo free), Packages (500MB), Codespaces (120 core-hrs/mo)",
-    free_tier: [
-      { limit: "Actions Minutes", value: 2000, unit: "minutes/month", notes: "Public repos; 500 for private" },
-      { limit: "Packages Storage", value: 500, unit: "MB/month" },
-      { limit: "Codespaces", value: 120, unit: "core-hours/month" },
-    ],
-  },
-  {
-    name: "Vercel",
-    provider: "Vercel",
-    category: "cloud_infrastructure",
-    pricing_url: "https://vercel.com/pricing",
-    description: "Frontend hosting, serverless functions (100 GB-hrs/mo), 6000 build min/mo, 100GB bandwidth",
-    free_tier: [
-      { limit: "Bandwidth", value: 100, unit: "GB/month" },
-      { limit: "Serverless Execution", value: 100, unit: "GB-hours/month" },
-      { limit: "Build Minutes", value: 6000, unit: "minutes/month" },
-    ],
-  },
-  {
-    name: "Supabase",
-    provider: "Supabase",
-    category: "cloud_infrastructure",
-    pricing_url: "https://supabase.com/pricing",
-    description: "Postgres (500MB), Auth (50k MAU), Edge Functions (500k invocations/mo), Storage (1GB)",
-    free_tier: [
-      { limit: "Database", value: 500, unit: "MB" },
-      { limit: "Storage", value: 1, unit: "GB" },
-      { limit: "Edge Function Invocations", value: 500000, unit: "/month" },
-      { limit: "Auth MAUs", value: 50000, unit: "/month" },
-    ],
-  },
-  {
-    name: "OpenAI API",
-    provider: "OpenAI",
-    category: "ai_llm",
-    pricing_url: "https://openai.com/api/pricing/",
-    description: "GPT models, embeddings, DALL-E, Whisper. $5 free trial credits for new accounts",
-    free_tier: [
-      { limit: "Free Credits", value: 5, unit: "USD", notes: "One-time trial" },
-      { limit: "Rate Limit (GPT-3.5)", value: 500, unit: "requests/minute" },
-    ],
-  },
-  {
-    name: "Cloudflare",
-    provider: "Cloudflare",
-    category: "cloud_infrastructure",
-    pricing_url: "https://www.cloudflare.com/plans/",
-    description: "CDN, Workers (100k req/day), Pages, R2 (10GB), D1 (5GB SQLite-at-edge)",
-    free_tier: [
-      { limit: "Workers Requests", value: 100000, unit: "/day" },
-      { limit: "Pages Builds", value: 500, unit: "/month" },
-      { limit: "R2 Storage", value: 10, unit: "GB/month" },
-      { limit: "D1 Database", value: 5, unit: "GB" },
-    ],
-  },
-];
+import { CATALOG, findService } from "./catalog-data.js";
 
 // In-memory credential store (will be replaced with encrypted Supabase storage in Phase 2)
 const credentialStore = new Map<string, { name: string; type: string; value: string; service: string }>();
@@ -105,9 +41,7 @@ export function createUbciMcpServer() {
         "Get detailed free-tier limits for a specific service.",
         { service_name: z.string().describe("Service name (e.g., 'GitHub', 'Vercel')") },
         async (args) => {
-          const service = CATALOG.find(
-            (s) => s.name.toLowerCase() === args.service_name.toLowerCase()
-          );
+          const service = findService(args.service_name);
           if (!service) {
             return {
               content: [{ type: "text" as const, text: `Service "${args.service_name}" not found in catalog.` }],

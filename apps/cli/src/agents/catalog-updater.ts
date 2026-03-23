@@ -7,6 +7,8 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 import { getPlaywrightMcpConfig } from "../mcp/playwright-config.js";
 import { createUbciMcpServer } from "../mcp/ubci-tools.js";
 import { streamAgentOutput } from "../lib/agent-stream.js";
+import { safetyGuard } from "../hooks/safety-guard.js";
+import { progressReporter, resetProgress } from "../hooks/progress-reporter.js";
 
 const CATALOG_UPDATER_SYSTEM_PROMPT = `You are the UBC Catalog Agent. Your job is to keep the UBCI service catalog up-to-date by scraping pricing pages and discovering new free-tier services.
 
@@ -64,10 +66,19 @@ export async function runCatalogUpdater(
         ubci: ubciMcp,
         playwright: playwrightConfig,
       },
+      hooks: {
+        PreToolUse: [
+          { matcher: "Bash|mcp__playwright.*", hooks: [safetyGuard] },
+        ],
+        PostToolUse: [
+          { matcher: ".*", hooks: [progressReporter] },
+        ],
+      },
       permissionMode: "acceptEdits",
     },
   });
 
+  resetProgress();
   await streamAgentOutput(result);
   console.log();
 }

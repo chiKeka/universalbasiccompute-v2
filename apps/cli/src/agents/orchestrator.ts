@@ -7,6 +7,9 @@ import { query, type Options } from "@anthropic-ai/claude-agent-sdk";
 import { getPlaywrightMcpConfig } from "../mcp/playwright-config.js";
 import { createUbciMcpServer } from "../mcp/ubci-tools.js";
 import { streamAgentOutput } from "../lib/agent-stream.js";
+import { safetyGuard } from "../hooks/safety-guard.js";
+import { credentialCapture } from "../hooks/credential-capture.js";
+import { progressReporter, resetProgress } from "../hooks/progress-reporter.js";
 
 const ORCHESTRATOR_SYSTEM_PROMPT = `You are the UBC Orchestrator Agent. Your job is to help users build projects using only free-tier cloud services.
 
@@ -76,8 +79,19 @@ export async function createOrchestrator(
         maxTurns: 100,
       },
     },
+    hooks: {
+      PreToolUse: [
+        { matcher: "Bash|mcp__playwright.*", hooks: [safetyGuard] },
+      ],
+      PostToolUse: [
+        { matcher: "mcp__playwright.*", hooks: [credentialCapture] },
+        { matcher: ".*", hooks: [progressReporter] },
+      ],
+    },
     permissionMode: "acceptEdits",
   };
+
+  resetProgress();
 
   const prompt = options.dryRun
     ? `Plan (but do NOT provision or deploy) how to build: ${goal}`

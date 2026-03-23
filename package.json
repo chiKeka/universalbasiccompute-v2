@@ -4,6 +4,7 @@
   "private": true,
   "description": "Universal Basic Compute — agentic platform for provisioning free-tier cloud services",
   "scripts": {
+    "ubc": "pnpm --filter @ubcv2/cli exec tsx src/index.ts",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
