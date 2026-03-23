@@ -12,7 +12,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { loadAllServices, loadService } from "./catalog.js";
+import { loadAllServices, loadService, searchServices, getCategoryCounts } from "./catalog.js";
 import { loadAllRecipes, loadRecipe } from "./recipes.js";
 import { getState, updateServiceStatus, type UBCState } from "./state.js";
 import { storeCredential, getCredentials, getCredential } from "./credentials.js";
@@ -26,22 +26,34 @@ const server = new McpServer({
 
 server.tool(
   "ubc_catalog",
-  "Browse the UBC free-tier service catalog. Returns all services or filter by category.",
-  { category: z.string().optional().describe("Filter: ai_llm, cloud_infrastructure, etc.") },
-  async ({ category }) => {
-    const services = loadAllServices();
-    const filtered = category
-      ? services.filter((s) => s.category === category)
-      : services;
+  "Browse the UBC free-tier service catalog (400+ services). Filter by category or search by name/description. Returns service name, category, description, free-tier limits, and whether a detailed setup guide exists.",
+  {
+    category: z.string().optional().describe("Filter by category: ai_llm, cloud_infrastructure, data_storage, automation_workflow, api_services, developer_tools"),
+    search: z.string().optional().describe("Search by name, provider, or description"),
+    limit: z.number().optional().default(50).describe("Max results to return (default 50)"),
+  },
+  async ({ category, search, limit }) => {
+    if (search) {
+      const results = searchServices(search, category).slice(0, limit);
+      return { content: [{ type: "text", text: JSON.stringify(results, null, 2) }] };
+    }
 
-    const summary = filtered.map((s) => ({
-      name: s.name,
-      category: s.category,
-      description: s.description,
-      free_tier: s.free_tier,
-      provides: s.provides,
-    }));
+    if (category) {
+      const results = loadAllServices()
+        .filter((s) => s.category === category)
+        .slice(0, limit);
+      return { content: [{ type: "text", text: JSON.stringify(results, null, 2) }] };
+    }
 
+    // No filter: return summary with counts
+    const counts = getCategoryCounts();
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    const summary = {
+      total_services: total,
+      categories: counts,
+      detailed_guides: loadAllServices().filter((s) => s.has_detailed_guide).map((s) => s.name),
+      hint: "Use 'category' to browse a category, or 'search' to find specific services.",
+    };
     return { content: [{ type: "text", text: JSON.stringify(summary, null, 2) }] };
   }
 );

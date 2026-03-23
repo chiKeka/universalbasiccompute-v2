@@ -1,0 +1,2896 @@
+# =============================================================================
+# Universal Basic Compute — Free-Tier Service Catalog
+# Generated: 2026-03-23
+# Total services: 300+
+# Sources: free-for.dev, cloud provider docs, community lists
+# =============================================================================
+
+# =============================================================================
+# CATEGORY: ai_llm
+# AI/ML APIs, LLM providers, image generation, speech, embeddings
+# =============================================================================
+
+- name: Google Gemini API
+  provider: Google
+  category: ai_llm
+  website: https://ai.google.dev
+  description: Gemini 2.5 Pro/Flash/Flash-Lite LLMs with 1M token context window
+  free_tier: "Pro: 5 RPM / 100 req/day; Flash: 10 RPM / 250 req/day; Flash-Lite: 15 RPM / 1000 req/day; 250K tokens/min shared"
+
+- name: Groq
+  provider: Groq
+  category: ai_llm
+  website: https://groq.com
+  description: Ultra-fast LPU inference engine for open-source models (Llama, Qwen, Kimi)
+  free_tier: "30 RPM on 70B models; 12K tokens/min; 1K req/day (70B) or 14.4K req/day (8B); no credit card"
+
+- name: OpenRouter
+  provider: OpenRouter
+  category: ai_llm
+  website: https://openrouter.ai
+  description: Unified API for 100+ LLMs including free models (DeepSeek, Llama, Qwen)
+  free_tier: "20 RPM on free models; 50 req/day without balance; 1000 req/day with $10+ balance"
+
+- name: Mistral AI
+  provider: Mistral
+  category: ai_llm
+  website: https://mistral.ai
+  description: Mistral Large, Small, Codestral, and Pixtral models via API
+  free_tier: "2 RPM; 500K tokens/min; 1B tokens/month; no credit card required"
+
+- name: Cerebras Inference
+  provider: Cerebras
+  category: ai_llm
+  website: https://cerebras.ai
+  description: High-speed inference for Llama 3.3 70B, Qwen3, GPT-OSS 120B
+  free_tier: "30 RPM; 60K tokens/min; 1M tokens/day; no credit card required"
+
+- name: Cohere
+  provider: Cohere
+  category: ai_llm
+  website: https://cohere.com
+  description: Command R+ LLM, Embed 4, and Rerank 3.5 for RAG and search
+  free_tier: "20 RPM; 1000 requests/month; non-commercial use only; no credit card"
+
+- name: Cloudflare Workers AI
+  provider: Cloudflare
+  category: ai_llm
+  website: https://developers.cloudflare.com/workers-ai
+  description: Run Llama, Mistral, FLUX, Whisper and other open models at the edge
+  free_tier: "10,000 neurons/day; multiple model families; no credit card required"
+
+- name: GitHub Models
+  provider: GitHub
+  category: ai_llm
+  website: https://github.com/marketplace/models
+  description: Access GPT-4o, GPT-4.1, o3, Grok-3, DeepSeek-R1 via GitHub
+  free_tier: "10-15 RPM; 50-150 req/day per model tier; 8K input / 4K output tokens per request"
+
+- name: NVIDIA NIM
+  provider: NVIDIA
+  category: ai_llm
+  website: https://build.nvidia.com
+  description: Optimized inference for DeepSeek, Llama, Kimi K2.5, and other models
+  free_tier: "40 RPM; 1000 free credits on signup; can request up to 5000 total"
+
+- name: HuggingFace Inference API
+  provider: HuggingFace
+  category: ai_llm
+  website: https://huggingface.co/inference-api
+  description: Access 300K+ community models for NLP, vision, audio, and more
+  free_tier: "Small monthly credits; models under ~10B parameters; 30K characters/month"
+
+- name: xAI Grok API
+  provider: xAI
+  category: ai_llm
+  website: https://x.ai/api
+  description: Grok 4 and Grok 4.1 Fast with 2M token context window
+  free_tier: "$25 signup credits; $150/month via data-sharing program"
+
+- name: DeepSeek API
+  provider: DeepSeek
+  category: ai_llm
+  website: https://platform.deepseek.com
+  description: DeepSeek V3 and R1 reasoning models at ultra-low cost
+  free_tier: "5M free tokens valid 30 days; then $0.14/M input, $0.28/M output"
+
+- name: SambaNova
+  provider: SambaNova
+  category: ai_llm
+  website: https://sambanova.ai
+  description: Fast inference for Llama 3.3 70B, 405B, Qwen 2.5 72B
+  free_tier: "$5 credits + persistent free tier; 10-30 RPM depending on model"
+
+- name: Anthropic Claude API
+  provider: Anthropic
+  category: ai_llm
+  website: https://console.anthropic.com
+  description: Claude Sonnet and Opus models for code, analysis, and reasoning
+  free_tier: "$5 one-time signup credits; credit card required after trial"
+
+- name: AI21 Labs
+  provider: AI21
+  category: ai_llm
+  website: https://studio.ai21.com
+  description: Jamba Large and Mini models optimized for enterprise tasks
+  free_tier: "$10 credits valid 3 months; 200 RPM, 10 RPS"
+
+- name: Fireworks AI
+  provider: Fireworks
+  category: ai_llm
+  website: https://fireworks.ai
+  description: Fast inference for Llama 405B, DeepSeek R1 and other open models
+  free_tier: "10 RPM without payment method; 6000 RPM with payment method on file"
+
+- name: Google Colab
+  provider: Google
+  category: ai_llm
+  website: https://colab.research.google.com
+  description: Free Jupyter notebooks with GPU/TPU access for ML experimentation
+  free_tier: "Free GPU (T4), limited compute hours, 12hr session limit"
+
+- name: Weights & Biases
+  provider: Weights & Biases
+  category: ai_llm
+  website: https://wandb.ai
+  description: MLOps experiment tracking, model management, and visualization
+  free_tier: "100GB storage; unlimited experiments for individuals"
+
+- name: CometML
+  provider: Comet
+  category: ai_llm
+  website: https://comet.com
+  description: ML experiment tracking, model monitoring, and production debugging
+  free_tier: "Free for individuals and academics; unlimited experiments"
+
+- name: Arize AI
+  provider: Arize
+  category: ai_llm
+  website: https://arize.com
+  description: ML observability for model performance monitoring and troubleshooting
+  free_tier: "2 free models; community plan available"
+
+- name: Replicate
+  provider: Replicate
+  category: ai_llm
+  website: https://replicate.com
+  description: Run open-source ML models (Stable Diffusion, Whisper, LLMs) via API
+  free_tier: "Free predictions for select models; pay-per-second for GPU models"
+
+- name: Stability AI
+  provider: Stability AI
+  category: ai_llm
+  website: https://platform.stability.ai
+  description: Stable Diffusion and SDXL image generation API
+  free_tier: "25 free credits on signup; ~500 image generations"
+
+- name: Deepnote
+  provider: Deepnote
+  category: ai_llm
+  website: https://deepnote.com
+  description: Collaborative Jupyter notebooks with built-in SQL and visualization
+  free_tier: "Unlimited projects; 5GB RAM; 2 vCPUs; real-time collaboration"
+
+- name: JetBrains Datalore
+  provider: JetBrains
+  category: ai_llm
+  website: https://datalore.jetbrains.com
+  description: Collaborative data science notebooks with smart coding assistance
+  free_tier: "10GB storage; 120 compute hours/month"
+
+- name: Maxim AI
+  provider: Maxim
+  category: ai_llm
+  website: https://getmaxim.ai
+  description: AI agent evaluation and testing platform
+  free_tier: "Free for indie developers; 3 seats"
+
+- name: Tavily AI Search
+  provider: Tavily
+  category: ai_llm
+  website: https://tavily.com
+  description: AI-optimized search API designed for LLM agents and RAG
+  free_tier: "1000 requests/month; no credit card required"
+
+- name: OCR.Space
+  provider: OCR.Space
+  category: ai_llm
+  website: https://ocr.space
+  description: OCR API for extracting text from images and PDFs
+  free_tier: "25,000 requests/month; 1MB file size limit"
+
+- name: DeepAR
+  provider: DeepAR
+  category: ai_llm
+  website: https://developer.deepar.ai
+  description: AR face filters and effects SDK for apps
+  free_tier: "10 monthly active users; 4 face tracking slots"
+
+- name: Composio
+  provider: Composio
+  category: ai_llm
+  website: https://composio.dev
+  description: 200+ tool integrations for AI agents (GitHub, Slack, Gmail, etc.)
+  free_tier: "Free tier with core integrations; usage-based beyond limits"
+
+# =============================================================================
+# CATEGORY: cloud_infrastructure
+# Hosting, serverless, containers, edge compute, CDN
+# =============================================================================
+
+- name: Cloudflare (CDN/Workers/Pages)
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://cloudflare.com
+  description: Global CDN, Workers serverless, Pages hosting, DNS, DDoS protection
+  free_tier: "Workers: 100K req/day; Pages: 500 builds/mo; R2: 10GB; D1: 5GB; unlimited CDN bandwidth; free SSL"
+
+- name: Vercel
+  provider: Vercel
+  category: cloud_infrastructure
+  website: https://vercel.com
+  description: Frontend cloud for Next.js, React, Vue with serverless functions
+  free_tier: "100GB bandwidth/mo; 100K serverless invocations; unlimited deployments; 256MB Postgres"
+
+- name: Netlify
+  provider: Netlify
+  category: cloud_infrastructure
+  website: https://netlify.com
+  description: Platform for static sites and serverless functions with Git-based deploys
+  free_tier: "100GB bandwidth/mo; 300 build minutes; 125K function calls; free SSL"
+
+- name: Render
+  provider: Render
+  category: cloud_infrastructure
+  website: https://render.com
+  description: Cloud platform for web services, static sites, Postgres, and Redis
+  free_tier: "512MB RAM web services; 1GB Postgres (30 days); 25MB Redis; static sites unlimited"
+
+- name: AWS Lambda
+  provider: AWS
+  category: cloud_infrastructure
+  website: https://aws.amazon.com/lambda
+  description: Serverless compute — run code without provisioning servers
+  free_tier: "1M requests/month; 400,000 GB-seconds compute; always free"
+
+- name: AWS EC2
+  provider: AWS
+  category: cloud_infrastructure
+  website: https://aws.amazon.com/ec2
+  description: Virtual servers in the cloud with various instance types
+  free_tier: "750 hours/month t2/t3.micro; 100GB egress; 12-month free tier"
+
+- name: AWS CloudFront
+  provider: AWS
+  category: cloud_infrastructure
+  website: https://aws.amazon.com/cloudfront
+  description: Global CDN for fast content delivery with edge locations
+  free_tier: "1TB data transfer out/month; 10M HTTP requests/month; always free"
+
+- name: Google Cloud Run
+  provider: Google Cloud
+  category: cloud_infrastructure
+  website: https://cloud.google.com/run
+  description: Fully managed serverless containers that scale to zero
+  free_tier: "2M requests/month; 360K GB-seconds memory; 180K vCPU-seconds"
+
+- name: Google Cloud Functions
+  provider: Google Cloud
+  category: cloud_infrastructure
+  website: https://cloud.google.com/functions
+  description: Event-driven serverless functions for Google Cloud
+  free_tier: "2M invocations/month; 400K GB-seconds; 200K GHz-seconds"
+
+- name: Google Compute Engine
+  provider: Google Cloud
+  category: cloud_infrastructure
+  website: https://cloud.google.com/compute
+  description: Virtual machines on Google's infrastructure
+  free_tier: "1 e2-micro instance (0.25 vCPU, 1GB RAM); 30GB HDD; 1GB egress; always free"
+
+- name: Google App Engine
+  provider: Google Cloud
+  category: cloud_infrastructure
+  website: https://cloud.google.com/appengine
+  description: Fully managed platform for building web apps and APIs
+  free_tier: "28 frontend instance hours/day; 9 backend instance hours/day; 1GB storage"
+
+- name: Azure Functions
+  provider: Microsoft Azure
+  category: cloud_infrastructure
+  website: https://azure.microsoft.com/services/functions
+  description: Event-driven serverless compute platform
+  free_tier: "1M requests/month; 400K GB-seconds; always free"
+
+- name: Azure App Service
+  provider: Microsoft Azure
+  category: cloud_infrastructure
+  website: https://azure.microsoft.com/services/app-service
+  description: Fully managed platform for web apps, REST APIs, and mobile backends
+  free_tier: "10 apps; 60 CPU minutes/day; 1GB RAM; 1GB storage; custom domain"
+
+- name: Azure Static Web Apps
+  provider: Microsoft Azure
+  category: cloud_infrastructure
+  website: https://azure.microsoft.com/services/app-service/static
+  description: Modern web app hosting with built-in CI/CD from GitHub
+  free_tier: "Free SSL; custom domains; auth integration; 100GB bandwidth/mo"
+
+- name: Oracle Cloud Compute
+  provider: Oracle Cloud
+  category: cloud_infrastructure
+  website: https://www.oracle.com/cloud/compute
+  description: Always-free ARM and AMD VMs with generous resources
+  free_tier: "4 ARM cores / 24GB RAM; 2 AMD VMs (1GB each); 200GB block storage; 10TB egress; always free"
+
+- name: Koyeb
+  provider: Koyeb
+  category: cloud_infrastructure
+  website: https://koyeb.com
+  description: Serverless platform for deploying apps globally with free tier
+  free_tier: "1 web service; 1 Postgres DB; 1GB RAM; 0.25 CPU; 50 active hours; no credit card"
+
+- name: Railway
+  provider: Railway
+  category: cloud_infrastructure
+  website: https://railway.app
+  description: Deploy apps, databases, and services with instant Git deploys
+  free_tier: "$5 trial credit; no credit card required; supports Docker, Node, Python, Go, etc."
+
+- name: Fly.io
+  provider: Fly.io
+  category: cloud_infrastructure
+  website: https://fly.io
+  description: Deploy app servers close to users on a global edge network
+  free_tier: "3 shared-CPU VMs; 256MB RAM each; 3GB persistent storage; 160GB outbound transfer"
+
+- name: Deno Deploy
+  provider: Deno
+  category: cloud_infrastructure
+  website: https://deno.com/deploy
+  description: Serverless JavaScript/TypeScript platform at the edge
+  free_tier: "1M requests/month; 100K KV read units/day; 1K KV write units/day"
+
+- name: Cloudflare Pages
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://pages.cloudflare.com
+  description: JAMstack platform for frontend developers with Git-based deploys
+  free_tier: "500 builds/month; 100 custom domains; unlimited bandwidth; unlimited sites"
+
+- name: GitHub Pages
+  provider: GitHub
+  category: cloud_infrastructure
+  website: https://pages.github.com
+  description: Static site hosting directly from GitHub repositories
+  free_tier: "1GB storage; 100GB bandwidth/month; unlimited sites from public repos"
+
+- name: GitLab Pages
+  provider: GitLab
+  category: cloud_infrastructure
+  website: https://docs.gitlab.com/ee/user/project/pages
+  description: Static site hosting from GitLab repositories with CI/CD
+  free_tier: "Included with free GitLab tier; CI/CD pipeline deployment"
+
+- name: Surge.sh
+  provider: Surge
+  category: cloud_infrastructure
+  website: https://surge.sh
+  description: Simple, single-command static web publishing from CLI
+  free_tier: "Unlimited publishing; free SSL; custom domain; CLI-based deploys"
+
+- name: Zeabur
+  provider: Zeabur
+  category: cloud_infrastructure
+  website: https://zeabur.com
+  description: Serverless platform for deploying functions and static sites
+  free_tier: "Serverless functions; static sites; 10GB outbound/month"
+
+- name: Scalingo
+  provider: Scalingo
+  category: cloud_infrastructure
+  website: https://scalingo.com
+  description: European PaaS for deploying web apps with managed databases
+  free_tier: "Free trial credits; GDPR-compliant hosting"
+
+- name: Cloud 66
+  provider: Cloud 66
+  category: cloud_infrastructure
+  website: https://cloud66.com
+  description: DevOps-as-a-service for building, deploying, and managing applications
+  free_tier: "1 free deployment server; 1 free static site; personal projects"
+
+- name: Deployment.io
+  provider: Deployment.io
+  category: cloud_infrastructure
+  website: https://deployment.io
+  description: Static site and serverless deployment platform
+  free_tier: "Unlimited static sites; 10 free job executions/month"
+
+- name: Alibaba Cloud
+  provider: Alibaba
+  category: cloud_infrastructure
+  website: https://alibabacloud.com/campaign/free-trial
+  description: 40+ cloud products including Elastic Compute and databases
+  free_tier: "$1300 worth of free products; 12-month Elastic Compute"
+
+- name: IBM Cloud
+  provider: IBM
+  category: cloud_infrastructure
+  website: https://ibm.com/cloud/free
+  description: Cloud platform with AI, Kubernetes, serverless, and data services
+  free_tier: "Lite plan always free; Cloud Functions 5M exec/mo; Kubernetes free cluster"
+
+- name: Codeberg Pages
+  provider: Codeberg
+  category: cloud_infrastructure
+  website: https://codeberg.page
+  description: Static site hosting for open-source projects on Codeberg
+  free_tier: "Free for FOSS projects; custom domains; SSL"
+
+- name: Cloudflare TURN
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://developers.cloudflare.com/calls/turn
+  description: TURN relay service for WebRTC applications
+  free_tier: "1TB outgoing traffic/month"
+
+- name: Cloudflare Zero Trust
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://www.cloudflare.com/products/zero-trust
+  description: Zero Trust security with VPN replacement, DNS filtering, and access control
+  free_tier: "50 users; 24-hour logging; 3 network locations"
+
+# =============================================================================
+# CATEGORY: data_storage
+# Databases, object storage, cache, search, vector DBs
+# =============================================================================
+
+- name: Supabase
+  provider: Supabase
+  category: data_storage
+  website: https://supabase.com
+  description: Open-source Firebase alternative with Postgres, Auth, Storage, and Realtime
+  free_tier: "2 projects; 500MB database; 1GB file storage; 5GB bandwidth; 50K MAU; 1-day log retention"
+
+- name: Neon
+  provider: Neon
+  category: data_storage
+  website: https://neon.tech
+  description: Serverless Postgres with branching, auto-scaling, and instant provisioning
+  free_tier: "1 project; 10 branches; 3GB data/branch; shared compute 1GB RAM; always free"
+
+- name: MongoDB Atlas
+  provider: MongoDB
+  category: data_storage
+  website: https://mongodb.com/atlas
+  description: Managed MongoDB database-as-a-service with global clusters
+  free_tier: "512MB storage; shared RAM; M0 cluster; always free"
+
+- name: Firebase Firestore
+  provider: Google
+  category: data_storage
+  website: https://firebase.google.com/products/firestore
+  description: Flexible, scalable NoSQL cloud database for client and server development
+  free_tier: "1GB storage; 50K reads/day; 20K writes/day; 20K deletes/day"
+
+- name: Firebase Realtime Database
+  provider: Google
+  category: data_storage
+  website: https://firebase.google.com/products/realtime-database
+  description: Cloud-hosted NoSQL database with real-time synchronization
+  free_tier: "1GB storage; 10GB/month transfer; 100 simultaneous connections"
+
+- name: AWS DynamoDB
+  provider: AWS
+  category: data_storage
+  website: https://aws.amazon.com/dynamodb
+  description: Fully managed NoSQL database with single-digit millisecond performance
+  free_tier: "25GB storage; 25 read capacity units; 25 write capacity units; always free"
+
+- name: AWS S3
+  provider: AWS
+  category: data_storage
+  website: https://aws.amazon.com/s3
+  description: Industry-leading object storage for any amount of data
+  free_tier: "5GB storage; 20K GET; 2K PUT requests; 12-month free tier"
+
+- name: AWS RDS
+  provider: AWS
+  category: data_storage
+  website: https://aws.amazon.com/rds
+  description: Managed relational database service (MySQL, Postgres, MariaDB)
+  free_tier: "750 hours/month db.t2/t3/t4g.micro; 20GB SSD; 12-month free tier"
+
+- name: Google Cloud Storage
+  provider: Google Cloud
+  category: data_storage
+  website: https://cloud.google.com/storage
+  description: Unified object storage for any amount of data
+  free_tier: "5GB-months storage; 1GB egress/month; 5K Class A ops; 50K Class B ops"
+
+- name: Google BigQuery
+  provider: Google Cloud
+  category: data_storage
+  website: https://cloud.google.com/bigquery
+  description: Serverless enterprise data warehouse for analytics at any scale
+  free_tier: "1TB querying/month; 10GB storage/month; always free"
+
+- name: Azure Cosmos DB
+  provider: Microsoft Azure
+  category: data_storage
+  website: https://azure.microsoft.com/services/cosmos-db
+  description: Globally distributed multi-model database with multi-API support
+  free_tier: "25GB storage; 1000 RU/s provisioned throughput; always free"
+
+- name: Oracle Autonomous Database
+  provider: Oracle Cloud
+  category: data_storage
+  website: https://www.oracle.com/autonomous-database
+  description: Self-driving, self-securing database with ML-driven automation
+  free_tier: "2 databases; 20GB each; always free"
+
+- name: Cloudflare R2
+  provider: Cloudflare
+  category: data_storage
+  website: https://developers.cloudflare.com/r2
+  description: S3-compatible object storage with zero egress fees
+  free_tier: "10GB storage/month; 1M Class A ops; 10M Class B ops; zero egress"
+
+- name: Cloudflare D1
+  provider: Cloudflare
+  category: data_storage
+  website: https://developers.cloudflare.com/d1
+  description: Serverless SQL database built on SQLite at the edge
+  free_tier: "5GB storage; 5M reads/day; 100K writes/day"
+
+- name: Cloudflare KV
+  provider: Cloudflare
+  category: data_storage
+  website: https://developers.cloudflare.com/kv
+  description: Global low-latency key-value data store at the edge
+  free_tier: "100K reads/day; 1K writes/day; 1K deletes/day; 1GB storage"
+
+- name: Upstash Redis
+  provider: Upstash
+  category: data_storage
+  website: https://upstash.com
+  description: Serverless Redis and Kafka with per-request pricing
+  free_tier: "10K commands/day; 256MB storage; 1 database; always free"
+
+- name: Upstash Kafka
+  provider: Upstash
+  category: data_storage
+  website: https://upstash.com/kafka
+  description: Serverless Kafka for event streaming with per-message pricing
+  free_tier: "10K messages/day; 1 topic; 1 partition; always free"
+
+- name: Upstash QStash
+  provider: Upstash
+  category: data_storage
+  website: https://upstash.com/qstash
+  description: Serverless message queue and task scheduling via HTTP
+  free_tier: "500 messages/day; 3 retries; always free"
+
+- name: PlanetScale
+  provider: PlanetScale
+  category: data_storage
+  website: https://planetscale.com
+  description: MySQL-compatible serverless database with branching (Vitess-based)
+  free_tier: "No free tier (removed 2024); cheapest plan $5/month single-node"
+
+- name: CockroachDB Serverless
+  provider: Cockroach Labs
+  category: data_storage
+  website: https://cockroachlabs.com
+  description: Distributed SQL database with PostgreSQL compatibility
+  free_tier: "10GB storage; 50M request units/month; always free"
+
+- name: Turso (libSQL)
+  provider: Turso
+  category: data_storage
+  website: https://turso.tech
+  description: Edge-hosted SQLite databases with embedded replicas
+  free_tier: "500 databases; 9GB total storage; 1B row reads/month; always free"
+
+- name: Aiven for PostgreSQL
+  provider: Aiven
+  category: data_storage
+  website: https://aiven.io
+  description: Managed PostgreSQL with monitoring, backups, and extensions
+  free_tier: "1 node; 1GB RAM; 5GB storage; 1 CPU; community support"
+
+- name: ElephantSQL
+  provider: ElephantSQL
+  category: data_storage
+  website: https://elephantsql.com
+  description: PostgreSQL as a Service with automated backups
+  free_tier: "Tiny Turtle: 20MB storage; 5 concurrent connections; always free"
+
+- name: Pinecone
+  provider: Pinecone
+  category: data_storage
+  website: https://pinecone.io
+  description: Vector database for similarity search and AI applications
+  free_tier: "2GB storage (~300K 1536d vectors); 2M write units/mo; 1M read units/mo"
+
+- name: Qdrant Cloud
+  provider: Qdrant
+  category: data_storage
+  website: https://qdrant.tech
+  description: Open-source vector database for AI applications with managed cloud
+  free_tier: "1GB vector storage forever; no credit card required"
+
+- name: Weaviate Cloud
+  provider: Weaviate
+  category: data_storage
+  website: https://weaviate.io
+  description: AI-native vector database for search and generative AI
+  free_tier: "14-day free trial only; open-source self-host is free"
+
+- name: Chroma
+  provider: Chroma
+  category: data_storage
+  website: https://trychroma.com
+  description: Open-source embedding database for AI applications
+  free_tier: "Open-source; self-host unlimited; cloud beta free tier"
+
+- name: Algolia
+  provider: Algolia
+  category: data_storage
+  website: https://algolia.com
+  description: Hosted search API with typo-tolerance, faceting, and analytics
+  free_tier: "Build plan: 10K records; 10K searches/month; always free"
+
+- name: Typesense Cloud
+  provider: Typesense
+  category: data_storage
+  website: https://cloud.typesense.org
+  description: Open-source search engine with typo-tolerance and instant search
+  free_tier: "Open-source self-host free; cloud starts at $19/month"
+
+- name: Meilisearch
+  provider: Meilisearch
+  category: data_storage
+  website: https://meilisearch.com
+  description: Lightning-fast open-source search engine for apps and websites
+  free_tier: "Open-source self-host free; Cloud beta available"
+
+- name: Sanity.io
+  provider: Sanity
+  category: data_storage
+  website: https://sanity.io
+  description: Structured content platform and headless CMS with real-time collaboration
+  free_tier: "Unlimited projects; 500K API CDN req; 10GB bandwidth; 5GB assets/project"
+
+- name: Contentful
+  provider: Contentful
+  category: data_storage
+  website: https://contentful.com
+  description: API-first headless CMS for omnichannel content delivery
+  free_tier: "1 community space; 5 users; 25K records; 48 content types"
+
+- name: DatoCMS
+  provider: DatoCMS
+  category: data_storage
+  website: https://datocms.com
+  description: GraphQL headless CMS with structured content and image processing
+  free_tier: "100K API calls/month; community plan"
+
+- name: Storyblok
+  provider: Storyblok
+  category: data_storage
+  website: https://storyblok.com
+  description: Headless CMS with visual editor and real-time preview
+  free_tier: "1 user; 10 data sources; 2500 assets; 250GB traffic/month"
+
+- name: Hygraph
+  provider: Hygraph
+  category: data_storage
+  website: https://hygraph.com
+  description: GraphQL-first headless CMS for building content-rich experiences
+  free_tier: "Community plan with limited usage; API access included"
+
+- name: IBM Cloudant
+  provider: IBM
+  category: data_storage
+  website: https://www.ibm.com/products/cloudant
+  description: Managed NoSQL JSON database based on CouchDB
+  free_tier: "1GB storage; Lite plan always free"
+
+- name: Crunchy Data
+  provider: Crunchy Data
+  category: data_storage
+  website: https://crunchydata.com
+  description: Enterprise PostgreSQL with managed cloud hosting
+  free_tier: "hobby-0 instance free until $5 threshold; great for MVPs"
+
+- name: AWS Glacier
+  provider: AWS
+  category: data_storage
+  website: https://aws.amazon.com/glacier
+  description: Low-cost cloud archive storage for long-term data retention
+  free_tier: "10GB retrieval/month; always free"
+
+- name: Oracle Object Storage
+  provider: Oracle Cloud
+  category: data_storage
+  website: https://www.oracle.com/cloud/storage/object-storage
+  description: S3-compatible object storage with always-free tier
+  free_tier: "10GB storage; always free"
+
+- name: Prismic
+  provider: Prismic
+  category: data_storage
+  website: https://prismic.io
+  description: Headless CMS with slice-based content modeling
+  free_tier: "Community plan: 1 user; unlimited documents; custom types"
+
+- name: TinaCMS
+  provider: TinaCMS
+  category: data_storage
+  website: https://tina.io
+  description: Git-backed headless CMS with visual editing in Next.js
+  free_tier: "2 users; unlimited content; open-source self-host"
+
+- name: Squidex
+  provider: Squidex
+  category: data_storage
+  website: https://squidex.io
+  description: Open-source headless CMS with API/GraphQL and event sourcing
+  free_tier: "Self-host free; cloud plan available"
+
+- name: FaunaDB
+  provider: Fauna
+  category: data_storage
+  website: https://fauna.com
+  description: Distributed document-relational database with native GraphQL
+  free_tier: "100K read ops; 50K write ops; 500K compute ops; 1GB storage"
+
+# =============================================================================
+# CATEGORY: automation_workflow
+# Workflow automation, CI/CD, scheduling, queues
+# =============================================================================
+
+- name: GitHub Actions
+  provider: GitHub
+  category: automation_workflow
+  website: https://github.com/features/actions
+  description: CI/CD workflow automation integrated with GitHub repositories
+  free_tier: "2000 minutes/month (public repos unlimited); 500MB storage"
+
+- name: GitLab CI/CD
+  provider: GitLab
+  category: automation_workflow
+  website: https://docs.gitlab.com/ee/ci
+  description: Built-in CI/CD pipelines with auto-DevOps support
+  free_tier: "400 CI/CD minutes/month; shared runners; 5GB artifacts storage"
+
+- name: CircleCI
+  provider: CircleCI
+  category: automation_workflow
+  website: https://circleci.com
+  description: Full-featured CI/CD with Docker, Mac, Windows, ARM executors
+  free_tier: "6000 build minutes/month; unlimited collaborators; 30 parallel jobs"
+
+- name: Buildkite
+  provider: Buildkite
+  category: automation_workflow
+  website: https://buildkite.com
+  description: CI/CD pipelines for teams with self-hosted or cloud agents
+  free_tier: "3 users; 5K job minutes/month; test analytics free"
+
+- name: Buddy
+  provider: Buddy
+  category: automation_workflow
+  website: https://buddy.works
+  description: CI/CD with instant setup, 120+ integrations, and preview deployments
+  free_tier: "5 projects; 1 concurrent pipeline; 120 executions/month"
+
+- name: Bitrise
+  provider: Bitrise
+  category: automation_workflow
+  website: https://bitrise.io
+  description: Mobile-first CI/CD for iOS and Android app development
+  free_tier: "200 builds/month; 10-minute build limit; 2 team members"
+
+- name: AppVeyor
+  provider: AppVeyor
+  category: automation_workflow
+  website: https://appveyor.com
+  description: CI/CD for Windows applications with .NET focus
+  free_tier: "Free for open-source projects; 1 concurrent job"
+
+- name: Codemagic
+  provider: Codemagic
+  category: automation_workflow
+  website: https://codemagic.io
+  description: CI/CD for mobile apps (Flutter, React Native, iOS, Android)
+  free_tier: "500 build minutes/month; macOS and Linux builds"
+
+- name: Google Cloud Build
+  provider: Google Cloud
+  category: automation_workflow
+  website: https://cloud.google.com/build
+  description: Serverless CI/CD platform on Google Cloud
+  free_tier: "120 build-minutes/day; always free"
+
+- name: AWS CodeBuild
+  provider: AWS
+  category: automation_workflow
+  website: https://aws.amazon.com/codebuild
+  description: Fully managed build service for compiling, testing, and packaging code
+  free_tier: "100 build minutes/month; always free"
+
+- name: AWS CodePipeline
+  provider: AWS
+  category: automation_workflow
+  website: https://aws.amazon.com/codepipeline
+  description: Continuous delivery service for automated release pipelines
+  free_tier: "1 active pipeline; always free"
+
+- name: Make (Integromat)
+  provider: Make
+  category: automation_workflow
+  website: https://make.com
+  description: Visual automation platform connecting 1500+ apps and services
+  free_tier: "1000 operations/month; 100MB data; 15-minute minimum interval"
+
+- name: n8n Cloud
+  provider: n8n
+  category: automation_workflow
+  website: https://n8n.io
+  description: Open-source workflow automation with 400+ integrations
+  free_tier: "Open-source self-host unlimited; community edition free"
+
+- name: Pipedream
+  provider: Pipedream
+  category: automation_workflow
+  website: https://pipedream.com
+  description: Serverless integration and compute platform for developers
+  free_tier: "10K invocations/day; 30-second execution; 100 workflows"
+
+- name: Zapier
+  provider: Zapier
+  category: automation_workflow
+  website: https://zapier.com
+  description: Automation platform connecting 6000+ apps with no-code workflows
+  free_tier: "100 tasks/month; 5 Zaps (workflows); single-step only"
+
+- name: Prefect Cloud
+  provider: Prefect
+  category: automation_workflow
+  website: https://prefect.io/cloud
+  description: Dataflow automation and orchestration platform
+  free_tier: "5 deployed workflows; 500 minutes/month; always free"
+
+- name: Windmill
+  provider: Windmill
+  category: automation_workflow
+  website: https://windmill.dev
+  description: Open-source developer platform for scripts, workflows, and UIs
+  free_tier: "3 non-premium workspaces; open-source self-host unlimited"
+
+- name: Cirrus CI
+  provider: Cirrus Labs
+  category: automation_workflow
+  website: https://cirrus-ci.org
+  description: CI service with Linux, Windows, macOS, and FreeBSD support
+  free_tier: "Free for public GitHub repos; community clusters"
+
+- name: DeployHQ
+  provider: DeployHQ
+  category: automation_workflow
+  website: https://deployhq.com
+  description: Automated deployment from Git repositories to servers
+  free_tier: "1 project; 10 daily deployments; 30 build minutes/month"
+
+- name: Mergify
+  provider: Mergify
+  category: automation_workflow
+  website: https://mergify.com
+  description: GitHub pull request automation with merge queues and rules
+  free_tier: "Free for public repos; merge queue; auto-merge rules"
+
+- name: Nx Cloud
+  provider: Nrwl
+  category: automation_workflow
+  website: https://nx.dev/ci
+  description: CI acceleration for monorepos with distributed task execution
+  free_tier: "150K credits/month for up to 30 contributors"
+
+- name: Spacelift
+  provider: Spacelift
+  category: automation_workflow
+  website: https://spacelift.io
+  description: Infrastructure-as-Code management and orchestration platform
+  free_tier: "200 minutes/month; 2 users; Terraform/OpenTofu/Pulumi"
+
+- name: Terramate
+  provider: Terramate
+  category: automation_workflow
+  website: https://terramate.io
+  description: IaC orchestration and management for Terraform stacks
+  free_tier: "2 users; unlimited stacks; drift detection"
+
+- name: Scalr
+  provider: Scalr
+  category: automation_workflow
+  website: https://scalr.com
+  description: Terraform automation and collaboration platform
+  free_tier: "50 runs/month; remote state management"
+
+- name: Pulumi
+  provider: Pulumi
+  category: automation_workflow
+  website: https://pulumi.com
+  description: Infrastructure as Code using TypeScript, Python, Go, C#
+  free_tier: "Individual tier free; unlimited resources; state management"
+
+- name: AWS SQS
+  provider: AWS
+  category: automation_workflow
+  website: https://aws.amazon.com/sqs
+  description: Fully managed message queuing service for microservices
+  free_tier: "1M requests/month; always free"
+
+- name: AWS SNS
+  provider: AWS
+  category: automation_workflow
+  website: https://aws.amazon.com/sns
+  description: Pub/sub messaging and mobile notifications service
+  free_tier: "1M publishes/month; 100K HTTP deliveries; always free"
+
+- name: Cloudflare Queues
+  provider: Cloudflare
+  category: automation_workflow
+  website: https://developers.cloudflare.com/queues
+  description: Serverless message queue on Cloudflare's global network
+  free_tier: "1M operations/month; always free"
+
+- name: Shipfox
+  provider: Shipfox
+  category: automation_workflow
+  website: https://shipfox.io
+  description: GitHub Actions acceleration with faster runners
+  free_tier: "3000 build minutes/month"
+
+- name: RunMyJob
+  provider: RunMyJob
+  category: automation_workflow
+  website: https://runmyjob.io
+  description: CI optimization for GitHub/GitLab with faster builds
+  free_tier: "400 vCPU-minutes; 800 GB-minutes; 10 concurrent jobs"
+
+- name: Bytebase
+  provider: Bytebase
+  category: automation_workflow
+  website: https://bytebase.com
+  description: Database CI/CD and schema migration management tool
+  free_tier: "Up to 20 users; 10 database instances; always free"
+
+# =============================================================================
+# CATEGORY: api_services
+# Email, SMS, payments, auth, image processing, analytics, monitoring
+# =============================================================================
+
+- name: Resend
+  provider: Resend
+  category: api_services
+  website: https://resend.com
+  description: Modern email API for developers with great DX and React Email support
+  free_tier: "3000 emails/month; 100/day cap; 1 custom domain; always free"
+
+- name: Mailgun
+  provider: Mailgun
+  category: api_services
+  website: https://mailgun.com
+  description: Transactional email API with deliverability tools and analytics
+  free_tier: "100 emails/day; permanent free tier; no time limit"
+
+- name: Postmark
+  provider: Postmark
+  category: api_services
+  website: https://postmarkapp.com
+  description: Fast transactional email delivery with industry-leading deliverability
+  free_tier: "100 test emails/month; developer plan free; $15/mo to go live"
+
+- name: AWS SES
+  provider: AWS
+  category: api_services
+  website: https://aws.amazon.com/ses
+  description: Cloud email service for transactional and marketing emails
+  free_tier: "3000 messages/month when sent from EC2; 12-month free tier"
+
+- name: Courier
+  provider: Courier
+  category: api_services
+  website: https://courier.com
+  description: Multi-channel notification API (push, email, chat, SMS, in-app)
+  free_tier: "10,000 messages/month; all channels included"
+
+- name: Novu
+  provider: Novu
+  category: api_services
+  website: https://novu.co
+  description: Open-source notification infrastructure for developers
+  free_tier: "30K notifications/month; 90-day activity retention; all channels"
+
+- name: Knock
+  provider: Knock
+  category: api_services
+  website: https://knock.app
+  description: Notification infrastructure API for in-app, email, push, SMS
+  free_tier: "10K messages/month; all channels; workflow builder"
+
+- name: Engagespot
+  provider: Engagespot
+  category: api_services
+  website: https://engagespot.co
+  description: Multi-channel notification infrastructure for product teams
+  free_tier: "10K messages/month; in-app, email, push, SMS"
+
+- name: SuprSend
+  provider: SuprSend
+  category: api_services
+  website: https://suprsend.com
+  description: Unified notification infrastructure with advanced routing
+  free_tier: "10K notifications/month; all features included"
+
+- name: Pingram
+  provider: Pingram
+  category: api_services
+  website: https://pingram.io
+  description: Communication infrastructure combining SMS, email, and push
+  free_tier: "100 SMS; 3000 emails; multi-channel notifications"
+
+- name: httpSMS
+  provider: httpSMS
+  category: api_services
+  website: https://httpsms.com
+  description: Send/receive SMS using your Android phone as a gateway
+  free_tier: "200 messages/month; uses your own phone number"
+
+- name: Webpushr
+  provider: Webpushr
+  category: api_services
+  website: https://webpushr.com
+  description: Web push notification service with segmentation and analytics
+  free_tier: "10K subscribers; unlimited notifications; automation"
+
+- name: Auth0
+  provider: Okta
+  category: api_services
+  website: https://auth0.com
+  description: Identity platform with SSO, MFA, social login, and passwordless auth
+  free_tier: "25K MAU; unlimited social connections; MFA included"
+
+- name: Clerk
+  provider: Clerk
+  category: api_services
+  website: https://clerk.com
+  description: Complete user management with pre-built UI components for React/Next.js
+  free_tier: "50K monthly retained users/app; unlimited apps; all auth methods"
+
+- name: Firebase Auth
+  provider: Google
+  category: api_services
+  website: https://firebase.google.com/products/auth
+  description: Authentication service with email, social, phone, and anonymous sign-in
+  free_tier: "50K MAU; email/password; social logins; anonymous auth; free forever"
+
+- name: Supabase Auth
+  provider: Supabase
+  category: api_services
+  website: https://supabase.com/auth
+  description: Open-source auth with Row Level Security and social providers
+  free_tier: "50K MAU; email/password; social OAuth; magic links; self-host unlimited"
+
+- name: SuperTokens
+  provider: SuperTokens
+  category: api_services
+  website: https://supertokens.com
+  description: Open-source authentication with session management and MFA
+  free_tier: "5000 MAU cloud; unlimited self-hosted; passwordless/social/email"
+
+- name: Kinde
+  provider: Kinde
+  category: api_services
+  website: https://kinde.com
+  description: Authentication and user management for modern applications
+  free_tier: "7500 MAU; SSO; MFA; roles & permissions"
+
+- name: WorkOS
+  provider: WorkOS
+  category: api_services
+  website: https://workos.com
+  description: Enterprise-ready authentication with SSO, SCIM, and directory sync
+  free_tier: "1M MAU; User Management; AuthKit; always free"
+
+- name: Stytch
+  provider: Stytch
+  category: api_services
+  website: https://stytch.com
+  description: Passwordless authentication APIs with fraud detection
+  free_tier: "10K MAU; unlimited orgs; 5 SSO connections; biometrics"
+
+- name: Logto
+  provider: Logto
+  category: api_services
+  website: https://logto.io
+  description: Auth0 alternative with beautiful sign-in experience
+  free_tier: "5K MAU; social connectors; RBAC; self-hosted option"
+
+- name: ZITADEL
+  provider: ZITADEL
+  category: api_services
+  website: https://zitadel.com
+  description: Identity management with user/access management and SSO
+  free_tier: "25K authenticated requests; all features included"
+
+- name: Descope
+  provider: Descope
+  category: api_services
+  website: https://descope.com
+  description: Drag-and-drop authentication flows with no-code builder
+  free_tier: "7500 MAU; 50 tenants; all auth methods"
+
+- name: Ory
+  provider: Ory
+  category: api_services
+  website: https://ory.sh
+  description: Open-source identity and access management (OAuth2, OIDC)
+  free_tier: "Unlimited team members; 200 DAU; 25K permission checks/month"
+
+- name: Okta Developer
+  provider: Okta
+  category: api_services
+  website: https://developer.okta.com
+  description: Enterprise identity and access management with SSO and MFA
+  free_tier: "100 MAU; SSO; MFA; social login"
+
+- name: Cloudinary
+  provider: Cloudinary
+  category: api_services
+  website: https://cloudinary.com
+  description: Image and video management with AI-powered transformations
+  free_tier: "25 credits/month (~5K transforms, 10GB storage, 10GB bandwidth); 10MB image limit"
+
+- name: ImageKit
+  provider: ImageKit
+  category: api_services
+  website: https://imagekit.io
+  description: Real-time image optimization, transformation, and CDN delivery
+  free_tier: "25GB bandwidth/month; 5GB storage; unlimited transformations; auto WebP"
+
+- name: PostHog
+  provider: PostHog
+  category: api_services
+  website: https://posthog.com
+  description: All-in-one product analytics, session recording, feature flags, and A/B testing
+  free_tier: "1M events/month; 5K session recordings; 1M feature flag requests; always free"
+
+- name: Umami
+  provider: Umami
+  category: api_services
+  website: https://umami.is
+  description: Privacy-focused open-source web analytics alternative to Google Analytics
+  free_tier: "Cloud: 100K events/month; 3 sites; self-host unlimited"
+
+- name: Plausible Analytics
+  provider: Plausible
+  category: api_services
+  website: https://plausible.io
+  description: Lightweight, privacy-friendly web analytics (no cookies)
+  free_tier: "Open-source self-host free; cloud starts at $9/month"
+
+- name: Mixpanel
+  provider: Mixpanel
+  category: api_services
+  website: https://mixpanel.com
+  description: Product analytics for tracking user behavior and engagement
+  free_tier: "20M events/month; core reports; unlimited data history"
+
+- name: Sentry
+  provider: Sentry
+  category: api_services
+  website: https://sentry.io
+  description: Application performance monitoring and error tracking
+  free_tier: "1 user; 5K errors; 10M tracing spans; 1GB attachments"
+
+- name: New Relic
+  provider: New Relic
+  category: api_services
+  website: https://newrelic.com
+  description: Full-stack observability platform for metrics, events, logs, and traces
+  free_tier: "100GB data ingest/month; 1 full-platform user; always free"
+
+- name: Grafana Cloud
+  provider: Grafana Labs
+  category: api_services
+  website: https://grafana.com/products/cloud
+  description: Composable observability platform for metrics, logs, and traces
+  free_tier: "10K metrics; 50GB logs; 50GB traces; 14-day retention; 3 users; always free"
+
+- name: Datadog
+  provider: Datadog
+  category: api_services
+  website: https://datadoghq.com
+  description: Cloud monitoring and security platform for infrastructure and applications
+  free_tier: "5 hosts; 1-day metric retention; core infrastructure monitoring"
+
+- name: BetterStack (Better Uptime)
+  provider: Better Stack
+  category: api_services
+  website: https://betterstack.com
+  description: Uptime monitoring, incident management, and status pages
+  free_tier: "10 monitors; 3-minute checks; status page; forever free"
+
+- name: UptimeRobot
+  provider: UptimeRobot
+  category: api_services
+  website: https://uptimerobot.com
+  description: Website monitoring with checks every 5 minutes
+  free_tier: "50 monitors; 5-minute intervals; email/webhook alerts; always free"
+
+- name: Freshping
+  provider: Freshworks
+  category: api_services
+  website: https://freshping.io
+  description: Website and API monitoring with status pages
+  free_tier: "50 monitors; 1-minute intervals; 5 status pages; always free"
+
+- name: Checkly
+  provider: Checkly
+  category: api_services
+  website: https://checklyhq.com
+  description: API and browser synthetic monitoring with Playwright
+  free_tier: "Generous free tier; API checks; browser checks; alerting"
+
+- name: AWS CloudWatch
+  provider: AWS
+  category: api_services
+  website: https://aws.amazon.com/cloudwatch
+  description: Monitoring and observability service for AWS resources
+  free_tier: "10 custom metrics; 10 alarms; 1M API requests; 5GB log data ingestion"
+
+- name: Stripe
+  provider: Stripe
+  category: api_services
+  website: https://stripe.com
+  description: Payment processing API for internet businesses
+  free_tier: "No monthly fee; test mode unlimited; 2.9% + $0.30 per live transaction"
+
+- name: Lemon Squeezy
+  provider: Lemon Squeezy
+  category: api_services
+  website: https://lemonsqueezy.com
+  description: All-in-one payments, tax, and subscriptions for SaaS
+  free_tier: "No monthly fee; 5% + $0.50 per transaction; handles tax globally"
+
+- name: FraudLabs Pro
+  provider: FraudLabs Pro
+  category: api_services
+  website: https://fraudlabspro.com
+  description: Online fraud prevention with credit card fraud screening
+  free_tier: "500 transactions/month; 25+ fraud validation rules"
+
+- name: Abstract API
+  provider: Abstract
+  category: api_services
+  website: https://abstractapi.com
+  description: Suite of APIs — IP geolocation, email validation, VAT, exchange rates
+  free_tier: "Various per-API limits; typically 1K-10K requests/month"
+
+- name: BigDataCloud
+  provider: BigDataCloud
+  category: api_services
+  website: https://bigdatacloud.com
+  description: IP geolocation, reverse geocoding, email/phone validation APIs
+  free_tier: "10K-50K requests/month depending on API endpoint"
+
+- name: IPinfo
+  provider: IPinfo
+  category: api_services
+  website: https://ipinfo.io
+  description: IP address data API for geolocation, ASN, company, and privacy detection
+  free_tier: "50K requests/month; always free"
+
+- name: Twilio
+  provider: Twilio
+  category: api_services
+  website: https://twilio.com
+  description: Communication APIs for SMS, voice, video, email, and WhatsApp
+  free_tier: "Trial credit on signup; free test numbers; pay-as-you-go after trial"
+
+- name: Vonage (Nexmo)
+  provider: Vonage
+  category: api_services
+  website: https://developer.vonage.com
+  description: Communication APIs for SMS, voice, video, and verification
+  free_tier: "Free trial credit; test SMS/voice; verify API trial"
+
+- name: Svix
+  provider: Svix
+  category: api_services
+  website: https://svix.com
+  description: Webhooks-as-a-Service with retry, verification, and management
+  free_tier: "50K messages/month; webhook portal; always free"
+
+- name: Hook0
+  provider: Hook0
+  category: api_services
+  website: https://hook0.com
+  description: Open-source webhooks infrastructure with event routing
+  free_tier: "100 events/day; 7 days history; always free"
+
+- name: Treblle
+  provider: Treblle
+  category: api_services
+  website: https://treblle.com
+  description: API observability, documentation, and debugging platform
+  free_tier: "250K requests/month; real-time monitoring; API analytics"
+
+- name: Apify
+  provider: Apify
+  category: api_services
+  website: https://apify.com
+  description: Web scraping and automation platform with 1500+ ready-made scrapers
+  free_tier: "$5 platform credits/month; scraping, crawling, data extraction"
+
+- name: ScrapingAnt
+  provider: ScrapingAnt
+  category: api_services
+  website: https://scrapingant.com
+  description: Web scraping API with headless Chrome and proxy rotation
+  free_tier: "10K API credits/month; JavaScript rendering"
+
+- name: SerpApi
+  provider: SerpApi
+  category: api_services
+  website: https://serpapi.com
+  description: Google Search results API for SEO and market research
+  free_tier: "100 searches/month; Google, Bing, Yahoo results"
+
+- name: Conversion Tools
+  provider: Conversion Tools
+  category: api_services
+  website: https://conversiontools.io
+  description: File conversion API for documents, images, video, and audio
+  free_tier: "300 conversions/month; 20MB file limit"
+
+- name: CraftMyPDF
+  provider: CraftMyPDF
+  category: api_services
+  website: https://craftmypdf.com
+  description: PDF generation API with drag-and-drop template editor
+  free_tier: "100 PDFs/month; 3 templates; always free"
+
+- name: PDFBolt
+  provider: PDFBolt
+  category: api_services
+  website: https://pdfbolt.com
+  description: HTML/URL to PDF conversion API with Chromium rendering
+  free_tier: "500 conversions/month; always free"
+
+- name: Reducto
+  provider: Reducto
+  category: api_services
+  website: https://reducto.ai
+  description: Document-to-JSON conversion API powered by AI
+  free_tier: "15K free credits; structured data extraction"
+
+- name: Commerce Layer
+  provider: Commerce Layer
+  category: api_services
+  website: https://commercelayer.io
+  description: Composable commerce API for multi-market ecommerce
+  free_tier: "100 orders/month; 1000 SKUs; all API features"
+
+- name: CurrencyScoop
+  provider: CurrencyScoop
+  category: api_services
+  website: https://currencyscoop.com
+  description: Real-time and historical currency exchange rate API
+  free_tier: "5000 API calls/month; 168 currencies"
+
+- name: UniRateAPI
+  provider: UniRateAPI
+  category: api_services
+  website: https://unirateapi.com
+  description: Exchange rate API supporting 590+ currencies and crypto
+  free_tier: "Unlimited API calls; 590+ currencies"
+
+- name: News API
+  provider: NewsAPI
+  category: api_services
+  website: https://newsapi.org
+  description: Search worldwide news articles from 80K+ sources
+  free_tier: "100 requests/day; development use; all sources"
+
+- name: Calendarific
+  provider: Calendarific
+  category: api_services
+  website: https://calendarific.com
+  description: Public and bank holiday API for 230+ countries
+  free_tier: "500 API calls/month; all countries"
+
+- name: OpenWeatherMap
+  provider: OpenWeather
+  category: api_services
+  website: https://openweathermap.org/api
+  description: Weather data API with current, forecast, and historical data
+  free_tier: "1000 API calls/day; current weather; 5-day forecast"
+
+- name: WeatherXu
+  provider: WeatherXu
+  category: api_services
+  website: https://weatherxu.com
+  description: Global weather data API with forecasts and historical data
+  free_tier: "10K API calls/month; current and forecast data"
+
+- name: Ably
+  provider: Ably
+  category: api_services
+  website: https://ably.com
+  description: Realtime messaging infrastructure with pub/sub and presence
+  free_tier: "3M messages/month; 100 peak connections; 100 channels"
+
+- name: PubNub
+  provider: PubNub
+  category: api_services
+  website: https://pubnub.com
+  description: Realtime communication APIs for chat, IoT, and streaming
+  free_tier: "1M transactions/month; 100 MAU; presence; storage"
+
+- name: Pusher
+  provider: Pusher
+  category: api_services
+  website: https://pusher.com
+  description: Hosted APIs for realtime web and mobile features
+  free_tier: "200K messages/day; 100 concurrent connections; unlimited channels"
+
+- name: Scaledrone
+  provider: Scaledrone
+  category: api_services
+  website: https://scaledrone.com
+  description: Realtime messaging service for web and mobile apps
+  free_tier: "100K events/day; 20 concurrent connections"
+
+- name: EMQX Serverless
+  provider: EMQX
+  category: api_services
+  website: https://emqx.com
+  description: Serverless MQTT broker for IoT messaging
+  free_tier: "1M session minutes/month; always free"
+
+- name: HiveMQ Cloud
+  provider: HiveMQ
+  category: api_services
+  website: https://hivemq.com
+  description: Managed MQTT cloud broker for IoT applications
+  free_tier: "100 device connections; always free"
+
+- name: Tencent RTC
+  provider: Tencent
+  category: api_services
+  website: https://trtc.io
+  description: Real-time audio/video communication SDK and API
+  free_tier: "10K free minutes/year; group audio/video"
+
+- name: LoginLlama
+  provider: LoginLlama
+  category: api_services
+  website: https://loginllama.app
+  description: Suspicious login detection API with risk scoring
+  free_tier: "1000 logins/month; fraud detection"
+
+- name: ProxySentry
+  provider: ProxySentry
+  category: api_services
+  website: https://proxysentry.io
+  description: Proxy and VPN detection API for fraud prevention
+  free_tier: "10K requests/month; IP intelligence"
+
+- name: Zuplo
+  provider: Zuplo
+  category: api_services
+  website: https://zuplo.com
+  description: API gateway and management platform at the edge
+  free_tier: "10 projects; 1M monthly requests; 10GB egress"
+
+# =============================================================================
+# CATEGORY: developer_tools
+# Code hosting, IDEs, testing, security, documentation
+# =============================================================================
+
+- name: GitHub
+  provider: GitHub
+  category: developer_tools
+  website: https://github.com
+  description: Code hosting with unlimited public/private repos, CI/CD, and project management
+  free_tier: "Unlimited repos; unlimited collaborators; 2K CI minutes/mo; 500MB packages; Copilot free tier"
+
+- name: GitLab
+  provider: GitLab
+  category: developer_tools
+  website: https://gitlab.com
+  description: Complete DevOps platform with Git hosting, CI/CD, and security scanning
+  free_tier: "Unlimited repos; 5 collaborators/repo; 400 CI min/mo; 5GB storage; container registry"
+
+- name: Bitbucket
+  provider: Atlassian
+  category: developer_tools
+  website: https://bitbucket.org
+  description: Git code hosting with Jira integration and built-in CI/CD
+  free_tier: "Unlimited private repos; 5 users; 50 build minutes/month"
+
+- name: Codeberg
+  provider: Codeberg
+  category: developer_tools
+  website: https://codeberg.org
+  description: Free Git hosting for FOSS projects with CI/CD and Pages
+  free_tier: "Unlimited repos; CI/CD (Woodpecker); Pages hosting; package registry"
+
+- name: Azure DevOps
+  provider: Microsoft
+  category: developer_tools
+  website: https://dev.azure.com
+  description: Development collaboration tools with repos, boards, pipelines, and artifacts
+  free_tier: "5 users; unlimited repos; 1800 CI/CD minutes/month; Azure Boards"
+
+- name: Visual Studio Code
+  provider: Microsoft
+  category: developer_tools
+  website: https://code.visualstudio.com
+  description: Free code editor with extensions, debugging, Git, and terminal
+  free_tier: "Completely free; 30K+ extensions; all languages; all platforms"
+
+- name: GitHub Copilot Free
+  provider: GitHub
+  category: developer_tools
+  website: https://github.com/features/copilot
+  description: AI pair programmer with code completions and chat
+  free_tier: "2K code completions/month; 50 chat messages/month; VS Code"
+
+- name: Cursor
+  provider: Cursor
+  category: developer_tools
+  website: https://cursor.com
+  description: AI-first code editor built on VS Code with Claude/GPT integration
+  free_tier: "Free tier with limited AI completions; full editor features"
+
+- name: Codeium
+  provider: Codeium
+  category: developer_tools
+  website: https://codeium.com
+  description: Free AI code completion for 70+ languages in any IDE
+  free_tier: "Unlimited AI completions; VS Code, JetBrains, Vim, Emacs; always free"
+
+- name: Supermaven
+  provider: Supermaven
+  category: developer_tools
+  website: https://supermaven.com
+  description: AI code completion with 1M token context for VS Code/JetBrains/Neovim
+  free_tier: "Free tier available; fast completions; large context window"
+
+- name: Gitpod
+  provider: Gitpod
+  category: developer_tools
+  website: https://gitpod.io
+  description: Cloud development environments with pre-built workspaces
+  free_tier: "50 hours/month; VS Code or JetBrains; any Git provider"
+
+- name: GitHub Codespaces
+  provider: GitHub
+  category: developer_tools
+  website: https://github.com/features/codespaces
+  description: Cloud-powered development environments in VS Code
+  free_tier: "120 core hours/month; 15GB storage; 2-core machines"
+
+- name: Replit
+  provider: Replit
+  category: developer_tools
+  website: https://replit.com
+  description: Browser-based IDE with collaboration, hosting, and AI assistance
+  free_tier: "Unlimited public repls; basic compute; collaboration"
+
+- name: CodeSandbox
+  provider: CodeSandbox
+  category: developer_tools
+  website: https://codesandbox.io
+  description: Instant cloud development environments for web projects
+  free_tier: "Unlimited public sandboxes; 20 private sandboxes; 4GB RAM"
+
+- name: StackBlitz
+  provider: StackBlitz
+  category: developer_tools
+  website: https://stackblitz.com
+  description: Full-stack web IDE powered by WebContainers running Node.js in browser
+  free_tier: "Unlimited public projects; instant environments; no signup needed"
+
+- name: JetBrains IDEs (Community)
+  provider: JetBrains
+  category: developer_tools
+  website: https://jetbrains.com
+  description: IntelliJ IDEA, PyCharm, and other professional IDEs — Community Edition
+  free_tier: "Community editions completely free; Java, Python, Android, Go"
+
+- name: Postman
+  provider: Postman
+  category: developer_tools
+  website: https://postman.com
+  description: API development platform with testing, documentation, and collaboration
+  free_tier: "Unlimited API requests; 3 users; 25 collection runs/month; always free"
+
+- name: Hoppscotch
+  provider: Hoppscotch
+  category: developer_tools
+  website: https://hoppscotch.io
+  description: Open-source API development ecosystem (REST, GraphQL, WebSocket)
+  free_tier: "Completely free; open-source; self-hostable"
+
+- name: Insomnia
+  provider: Kong
+  category: developer_tools
+  website: https://insomnia.rest
+  description: Open-source API client for REST, GraphQL, gRPC, and WebSocket
+  free_tier: "Free and open-source; local storage; design + debug"
+
+- name: Mintlify
+  provider: Mintlify
+  category: developer_tools
+  website: https://mintlify.com
+  description: AI-native API documentation platform with beautiful themes
+  free_tier: "1 editor; custom domain; search; API playground; llms.txt"
+
+- name: GitBook
+  provider: GitBook
+  category: developer_tools
+  website: https://gitbook.com
+  description: Technical knowledge management platform for documentation
+  free_tier: "Free for individuals/OSS; unlimited spaces; custom domain"
+
+- name: SonarCloud
+  provider: SonarSource
+  category: developer_tools
+  website: https://sonarcloud.io
+  description: Cloud-based code quality and security analysis for 30+ languages
+  free_tier: "Free for open-source; unlimited analysis; quality gates"
+
+- name: Snyk
+  provider: Snyk
+  category: developer_tools
+  website: https://snyk.io
+  description: Developer security for code, dependencies, containers, and IaC
+  free_tier: "200 tests/month; unlimited projects; GitHub/GitLab/Bitbucket integration"
+
+- name: Codacy
+  provider: Codacy
+  category: developer_tools
+  website: https://codacy.com
+  description: Automated code review for quality and security in 40+ languages
+  free_tier: "Unlimited public and private repos; always free"
+
+- name: CodeFactor
+  provider: CodeFactor
+  category: developer_tools
+  website: https://codefactor.io
+  description: Automated code review tool with instant feedback
+  free_tier: "Unlimited users and public repos; 1 private repo; always free"
+
+- name: Codecov
+  provider: Codecov
+  category: developer_tools
+  website: https://codecov.io
+  description: Code coverage reporting and analytics for pull requests
+  free_tier: "Free for open-source; 1 private repo; always free"
+
+- name: DeepSource
+  provider: DeepSource
+  category: developer_tools
+  website: https://deepsource.io
+  description: Static analysis for code quality, security, and performance bugs
+  free_tier: "Free for open-source; unlimited public repos; all analyzers"
+
+- name: CodeRabbit
+  provider: CodeRabbit
+  category: developer_tools
+  website: https://coderabbit.ai
+  description: AI-powered code review for GitHub and GitLab pull requests
+  free_tier: "200 files/hour; 3 reviews/hour; AI summaries"
+
+- name: Cypress
+  provider: Cypress
+  category: developer_tools
+  website: https://cypress.io
+  description: JavaScript end-to-end testing framework for web applications
+  free_tier: "Open-source framework free; Dashboard: 500 test results/month for OSS"
+
+- name: Percy
+  provider: BrowserStack
+  category: developer_tools
+  website: https://percy.io
+  description: Visual testing and review platform for UI changes
+  free_tier: "5K snapshots/month; always free"
+
+- name: Argos CI
+  provider: Argos
+  category: developer_tools
+  website: https://argos-ci.com
+  description: Visual testing for catching UI regressions in pull requests
+  free_tier: "5K screenshots/month; open-source unlimited"
+
+- name: BugBug
+  provider: BugBug
+  category: developer_tools
+  website: https://bugbug.io
+  description: No-code test automation for web applications
+  free_tier: "Unlimited local tests; test recording; always free"
+
+- name: Keploy
+  provider: Keploy
+  category: developer_tools
+  website: https://keploy.io
+  description: API test generation from network traffic with mocking
+  free_tier: "Open-source; unlimited tests; auto-generated test cases"
+
+- name: Webhook.site
+  provider: Webhook.site
+  category: developer_tools
+  website: https://webhook.site
+  description: Inspect, test, and debug webhooks and HTTP requests
+  free_tier: "Temporary URLs; always free; instant inspection"
+
+- name: RequestBin
+  provider: Pipedream
+  category: developer_tools
+  website: https://requestbin.com
+  description: HTTP request inspection and webhook debugging tool
+  free_tier: "Free webhook endpoints; request logging"
+
+- name: Let's Encrypt
+  provider: ISRG
+  category: developer_tools
+  website: https://letsencrypt.org
+  description: Free, automated SSL/TLS certificates for HTTPS
+  free_tier: "Unlimited certificates; 90-day auto-renewal; always free"
+
+- name: GitGuardian
+  provider: GitGuardian
+  category: developer_tools
+  website: https://gitguardian.com
+  description: Secrets detection and remediation in source code
+  free_tier: "25 developers or less; unlimited repos; real-time scanning"
+
+- name: Doppler
+  provider: Doppler
+  category: developer_tools
+  website: https://doppler.com
+  description: Universal secrets manager for managing environment variables
+  free_tier: "5 users; basic access controls; unlimited projects"
+
+- name: Infisical
+  provider: Infisical
+  category: developer_tools
+  website: https://infisical.com
+  description: Open-source secret management with E2E encryption
+  free_tier: "5 developers; unlimited secrets; CLI + SDKs"
+
+- name: Aikido Security
+  provider: Aikido
+  category: developer_tools
+  website: https://aikido.dev
+  description: All-in-one application security (SCA, SAST, CSPM, DAST, secrets)
+  free_tier: "2 users; 10 repos; 1 cloud account; all scanners"
+
+- name: Socket
+  provider: Socket
+  category: developer_tools
+  website: https://socket.dev
+  description: Supply chain security for npm, PyPI, and Go packages
+  free_tier: "Free CLI for open-source; dependency analysis"
+
+- name: Shields.io
+  provider: Shields.io
+  category: developer_tools
+  website: https://shields.io
+  description: Quality metadata badges for open-source projects
+  free_tier: "Completely free; unlimited badges; any service integration"
+
+- name: Bencher
+  provider: Bencher
+  category: developer_tools
+  website: https://bencher.dev
+  description: Continuous benchmarking for tracking code performance regressions
+  free_tier: "Free for public projects; unlimited benchmarks"
+
+- name: What The Diff
+  provider: What The Diff
+  category: developer_tools
+  website: https://whatthediff.ai
+  description: AI-powered code review summaries for pull requests
+  free_tier: "25K monthly tokens (~10 PRs/month)"
+
+- name: CodSpeed
+  provider: CodSpeed
+  category: developer_tools
+  website: https://codspeed.io
+  description: Performance tracking in CI/CD pipelines
+  free_tier: "Free for open-source; continuous benchmarking"
+
+- name: Gemfury
+  provider: Gemfury
+  category: developer_tools
+  website: https://gemfury.com
+  description: Private package hosting for npm, PyPI, Maven, Go, NuGet, APT, RPM
+  free_tier: "Free for public packages; all package formats"
+
+- name: JitPack
+  provider: JitPack
+  category: developer_tools
+  website: https://jitpack.io
+  description: Easy-to-use package repository for JVM and Android libraries
+  free_tier: "Free for public projects; Maven/Gradle integration"
+
+- name: RepoFlow
+  provider: RepoFlow
+  category: developer_tools
+  website: https://repoflow.io
+  description: Multi-format package registry (npm, PyPI, Docker, Maven)
+  free_tier: "10GB storage; 10GB bandwidth; 100 packages"
+
+- name: Coveralls
+  provider: Coveralls
+  category: developer_tools
+  website: https://coveralls.io
+  description: Test coverage history and statistics for code projects
+  free_tier: "Free for open-source; unlimited public repos"
+
+- name: Scrutinizer
+  provider: Scrutinizer
+  category: developer_tools
+  website: https://scrutinizer-ci.com
+  description: Continuous inspection and code quality analysis
+  free_tier: "Free for open-source; PHP, Python, Ruby"
+
+- name: Calendly
+  provider: Calendly
+  category: developer_tools
+  website: https://calendly.com
+  description: Scheduling automation platform for meetings and events
+  free_tier: "1 calendar connection; unlimited 1-on-1 sessions; always free"
+
+- name: Notion
+  provider: Notion
+  category: developer_tools
+  website: https://notion.so
+  description: All-in-one workspace for notes, docs, wikis, and project management
+  free_tier: "Unlimited pages; 5MB file uploads; 7-day version history"
+
+- name: Linear
+  provider: Linear
+  category: developer_tools
+  website: https://linear.app
+  description: Issue tracking and project management for software teams
+  free_tier: "Unlimited issues; unlimited members; roadmaps; cycles"
+
+- name: Huly
+  provider: Huly
+  category: developer_tools
+  website: https://huly.io
+  description: All-in-one project management (issues, docs, chat, HR)
+  free_tier: "Unlimited users; 10GB storage; all features; self-host option"
+
+- name: Discord
+  provider: Discord
+  category: developer_tools
+  website: https://discord.com
+  description: Communication platform with text, voice, video, and bots
+  free_tier: "Unlimited users and servers; bots; webhooks; always free"
+
+- name: Slack
+  provider: Salesforce
+  category: developer_tools
+  website: https://slack.com
+  description: Team messaging with channels, integrations, and workflows
+  free_tier: "Unlimited users; 90-day message history; 10 integrations"
+
+- name: Zulip
+  provider: Zulip
+  category: developer_tools
+  website: https://zulip.com
+  description: Threaded team chat with topics for organized conversations
+  free_tier: "10K message history; 5GB storage; self-host unlimited"
+
+- name: Revolt
+  provider: Revolt
+  category: developer_tools
+  website: https://revolt.chat
+  description: Open-source Discord alternative with all features free
+  free_tier: "All features free; self-hostable; no limits"
+
+- name: Pumble
+  provider: CAKE.com
+  category: developer_tools
+  website: https://pumble.com
+  description: Team communication with unlimited message history
+  free_tier: "Unlimited users; unlimited message history; 20GB storage"
+
+- name: Miro
+  provider: Miro
+  category: developer_tools
+  website: https://miro.com
+  description: Collaborative whiteboard platform for visual collaboration
+  free_tier: "3 editable boards; unlimited team members; core features"
+
+- name: tldraw
+  provider: tldraw
+  category: developer_tools
+  website: https://tldraw.com
+  description: Open-source collaborative whiteboard and diagramming tool
+  free_tier: "Completely free; open-source; real-time collaboration"
+
+- name: Figma
+  provider: Figma
+  category: developer_tools
+  website: https://figma.com
+  description: Collaborative design tool for UI/UX with prototyping
+  free_tier: "3 Figma files; unlimited personal files; Dev Mode limited"
+
+- name: Excalidraw
+  provider: Excalidraw
+  category: developer_tools
+  website: https://excalidraw.com
+  description: Open-source virtual whiteboard for sketching hand-drawn diagrams
+  free_tier: "Completely free; open-source; real-time collaboration; no signup"
+
+- name: DB Designer
+  provider: DB Designer
+  category: developer_tools
+  website: https://dbdesigner.net
+  description: Online database schema design and diagramming tool
+  free_tier: "2 models; 10 tables per model; always free"
+
+- name: drawDB
+  provider: drawDB
+  category: developer_tools
+  website: https://drawdb.app
+  description: Database entity relationship diagram editor in the browser
+  free_tier: "Completely free; no signup required; SQL export"
+
+- name: Proton Pass
+  provider: Proton
+  category: developer_tools
+  website: https://proton.me/pass
+  description: End-to-end encrypted password manager with email aliases
+  free_tier: "Unlimited passwords; 10 email aliases; 2FA; sharing"
+
+- name: Wistia
+  provider: Wistia
+  category: developer_tools
+  website: https://wistia.com
+  description: Video hosting platform with analytics and marketing tools
+  free_tier: "25 videos; basic analytics; customizable player"
+
+- name: Loom
+  provider: Atlassian
+  category: developer_tools
+  website: https://loom.com
+  description: Async video messaging for work communication
+  free_tier: "25 videos; 5 min per video; screen + cam recording"
+
+- name: Webex
+  provider: Cisco
+  category: developer_tools
+  website: https://webex.com
+  description: Video conferencing and team collaboration platform
+  free_tier: "40 min/meeting; 100 attendees; screen sharing"
+
+- name: Jitsi Meet
+  provider: 8x8
+  category: developer_tools
+  website: https://meet.jit.si
+  description: Open-source video conferencing with no account needed
+  free_tier: "Unlimited meetings; no signup; screen sharing; recording"
+
+- name: Whereby
+  provider: Whereby
+  category: developer_tools
+  website: https://whereby.com
+  description: Browser-based video meetings with permanent room links
+  free_tier: "1 meeting room; up to 100 participants; 45-minute meetings"
+
+- name: Zoom
+  provider: Zoom
+  category: developer_tools
+  website: https://zoom.us
+  description: Video meetings, webinars, and team collaboration
+  free_tier: "40-minute meetings; 100 participants; unlimited 1-on-1 meetings"
+
+- name: MockAPI
+  provider: MockAPI
+  category: developer_tools
+  website: https://mockapi.io
+  description: Mock REST API with fake data generation for prototyping
+  free_tier: "1 project; 2 resources per project; always free"
+
+- name: Beeceptor
+  provider: Beeceptor
+  category: developer_tools
+  website: https://beeceptor.com
+  description: API mocking for REST, SOAP, GraphQL with no-code rules
+  free_tier: "50 requests/day; mock server; request inspection"
+
+- name: Mockfly
+  provider: Mockfly
+  category: developer_tools
+  website: https://mockfly.dev
+  description: API mocking and feature flag service for developers
+  free_tier: "500 requests/day; mock endpoints; feature flags"
+
+- name: Sofodata
+  provider: Sofodata
+  category: developer_tools
+  website: https://sofodata.com
+  description: Create secure REST APIs from CSV files instantly
+  free_tier: "2 APIs; 2500 API calls/month; always free"
+
+- name: SmartParse
+  provider: SmartParse
+  category: developer_tools
+  website: https://smartparse.io
+  description: Data migration and CSV-to-API platform with validation
+  free_tier: "300 processing units/month; browser uploads; data quarantine"
+
+- name: Appwrite
+  provider: Appwrite
+  category: developer_tools
+  website: https://appwrite.io
+  description: Open-source backend-as-a-service with auth, DB, storage, functions
+  free_tier: "75K monthly active users; 2GB storage; 10GB bandwidth; 750K function executions"
+
+- name: Pocketbase
+  provider: PocketBase
+  category: developer_tools
+  website: https://pocketbase.io
+  description: Open-source backend in a single Go binary with SQLite
+  free_tier: "Completely free; self-host; auth, DB, file storage, realtime"
+
+- name: Convex
+  provider: Convex
+  category: developer_tools
+  website: https://convex.dev
+  description: Reactive backend-as-a-service with real-time sync and serverless functions
+  free_tier: "Starter plan free; 1M function calls; 1GB storage; 1GB bandwidth"
+
+- name: Nhost
+  provider: Nhost
+  category: developer_tools
+  website: https://nhost.io
+  description: Open-source Firebase alternative with Hasura, Postgres, and Auth
+  free_tier: "1 project; 1GB storage; 5GB bandwidth; Hasura GraphQL"
+
+- name: WPJack
+  provider: WPJack
+  category: developer_tools
+  website: https://wpjack.com
+  description: One-click WordPress deployment on cloud servers
+  free_tier: "1 server; 2 sites; free SSL; unlimited crons"
+
+- name: Nuclino
+  provider: Nuclino
+  category: developer_tools
+  website: https://nuclino.com
+  description: Collaborative wiki and knowledge base for teams
+  free_tier: "50 items; 5GB total storage; always free"
+
+- name: Slab
+  provider: Slab
+  category: developer_tools
+  website: https://slab.com
+  description: Knowledge management platform with powerful search
+  free_tier: "10 users; unlimited posts; integrations"
+
+- name: Hex
+  provider: Hex
+  category: developer_tools
+  website: https://hex.tech
+  description: Collaborative data science platform with SQL and Python
+  free_tier: "5 free projects; sharing; visualization"
+
+- name: Preset Cloud
+  provider: Preset
+  category: developer_tools
+  website: https://preset.io
+  description: Managed Apache Superset for data visualization and dashboards
+  free_tier: "5 users; unlimited dashboards; hosted Superset"
+
+- name: Fibery
+  provider: Fibery
+  category: developer_tools
+  website: https://fibery.io
+  description: Connected workspace for product teams (PM, docs, whiteboards)
+  free_tier: "Single user free; 2GB disk; all entity types"
+
+- name: Requestly
+  provider: Requestly
+  category: developer_tools
+  website: https://requestly.com
+  description: HTTP request interception, mocking, and modification for debugging
+  free_tier: "10 rules free; open-source version unlimited"
+
+- name: Kreya
+  provider: Kreya
+  category: developer_tools
+  website: https://kreya.app
+  description: GUI client for gRPC, REST, and WebSocket APIs
+  free_tier: "Completely free; all protocols; authentication support"
+
+- name: ExtendsClass
+  provider: ExtendsClass
+  category: developer_tools
+  website: https://extendsclass.com
+  description: Online developer tools — REST client, regex tester, cron builder
+  free_tier: "All tools free; REST client; SQL formatter; JSON tools"
+
+- name: Sqlable
+  provider: Sqlable
+  category: developer_tools
+  website: https://sqlable.com
+  description: SQL formatter, validator, regex tester, and database playgrounds
+  free_tier: "All tools free; no signup required"
+
+- name: CyberChef
+  provider: GCHQ
+  category: developer_tools
+  website: https://gchq.github.io/CyberChef
+  description: Web-based cryptography, encoding, compression, and data analysis toolkit
+  free_tier: "Completely free; open-source; runs in browser"
+
+- name: Qase
+  provider: Qase
+  category: developer_tools
+  website: https://qase.io
+  description: Test management platform for QA teams
+  free_tier: "500MB storage; 3 users; test cases and runs"
+
+- name: Libraries.io
+  provider: Libraries.io
+  category: developer_tools
+  website: https://libraries.io
+  description: Dependency monitoring across 32+ package managers
+  free_tier: "Free for open-source; dependency alerts; compatibility tracking"
+
+- name: Namae
+  provider: Namae
+  category: developer_tools
+  website: https://namae.dev
+  description: Search project name availability across npm, GitHub, domains, and more
+  free_tier: "Completely free; 10+ platform checks"
+
+- name: Dependabot
+  provider: GitHub
+  category: developer_tools
+  website: https://github.com/dependabot
+  description: Automated dependency updates and security alerts for GitHub repos
+  free_tier: "Free for all GitHub repos; auto PRs for updates"
+
+- name: Diawi
+  provider: Diawi
+  category: developer_tools
+  website: https://diawi.com
+  description: iOS and Android app distribution for testing
+  free_tier: "Password-protected; 1-day expiry; 10 installs; always free"
+
+- name: Loadly
+  provider: Loadly
+  category: developer_tools
+  website: https://loadly.io
+  description: iOS and Android beta app distribution platform
+  free_tier: "Unlimited downloads; app distribution; always free"
+
+- name: Esper
+  provider: Esper
+  category: developer_tools
+  website: https://esper.io
+  description: Android device management (MDM/MAM) platform
+  free_tier: "100 devices; 25MB app storage; always free"
+
+# =============================================================================
+# Additional high-value services that span categories
+# =============================================================================
+
+- name: Appwrite Cloud
+  provider: Appwrite
+  category: cloud_infrastructure
+  website: https://cloud.appwrite.io
+  description: Backend-as-a-service with databases, auth, storage, functions, and messaging
+  free_tier: "75K MAU; 2GB storage; 10GB bandwidth; 750K executions; 3 databases"
+
+- name: Firebase (Full Suite)
+  provider: Google
+  category: cloud_infrastructure
+  website: https://firebase.google.com
+  description: App development platform with hosting, DB, auth, analytics, and ML
+  free_tier: "Spark plan: 10GB hosting; 1GB Firestore; 5GB storage; 50K auth MAU; free forever"
+
+- name: Supabase Edge Functions
+  provider: Supabase
+  category: cloud_infrastructure
+  website: https://supabase.com/edge-functions
+  description: Serverless Deno functions deployed to the edge
+  free_tier: "500K invocations/month; 2 million function calls; included in free tier"
+
+- name: Deta Space
+  provider: Deta
+  category: cloud_infrastructure
+  website: https://deta.space
+  description: Personal cloud for building and running apps with data ownership
+  free_tier: "Free compute; free storage; personal cloud apps"
+
+- name: Cyclic
+  provider: Cyclic
+  category: cloud_infrastructure
+  website: https://cyclic.sh
+  description: Serverless Node.js app hosting with DynamoDB and S3 included
+  free_tier: "Full-stack apps; DynamoDB; S3; always free tier"
+
+- name: Val Town
+  provider: Val Town
+  category: cloud_infrastructure
+  website: https://val.town
+  description: Social programming platform for running JavaScript/TypeScript
+  free_tier: "Free tier with limited runs; serverless functions; HTTP endpoints"
+
+- name: Grafana (Self-Hosted)
+  provider: Grafana Labs
+  category: api_services
+  website: https://grafana.com/oss/grafana
+  description: Open-source analytics and visualization platform
+  free_tier: "Completely free self-hosted; unlimited dashboards; all data sources"
+
+- name: Prometheus
+  provider: CNCF
+  category: api_services
+  website: https://prometheus.io
+  description: Open-source systems monitoring and alerting toolkit
+  free_tier: "Completely free; self-hosted; time-series database; alerting"
+
+- name: SigNoz
+  provider: SigNoz
+  category: api_services
+  website: https://signoz.io
+  description: Open-source APM and observability (traces, metrics, logs) in one platform
+  free_tier: "Open-source self-host unlimited; OpenTelemetry native"
+
+- name: Logflare
+  provider: Supabase
+  category: api_services
+  website: https://logflare.app
+  description: Log management and event analytics powered by BigQuery
+  free_tier: "Free tier included with Supabase; 1-day retention on free plan"
+
+- name: Axiom
+  provider: Axiom
+  category: api_services
+  website: https://axiom.co
+  description: Log management and analytics with unlimited data ingestion
+  free_tier: "500GB ingest/month; 30-day retention; 1 user"
+
+- name: Logtail
+  provider: Better Stack
+  category: api_services
+  website: https://betterstack.com/logtail
+  description: Log management with structured logging and SQL queries
+  free_tier: "1GB/month; 3-day retention; live tail; alerting"
+
+- name: Papertrail
+  provider: SolarWinds
+  category: api_services
+  website: https://papertrailapp.com
+  description: Cloud-hosted log management with real-time search
+  free_tier: "100MB/month; 48-hour search; 7-day archive; 1 user"
+
+- name: Cloudflare DNS
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://www.cloudflare.com/dns
+  description: Authoritative DNS with global anycast, DNSSEC, and analytics
+  free_tier: "Unlimited domains; DDoS protection; ~11ms lookup; always free"
+
+- name: Cloudflare Tunnel
+  provider: Cloudflare
+  category: cloud_infrastructure
+  website: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks
+  description: Expose local services to the internet securely without port forwarding
+  free_tier: "Unlimited tunnels; no inbound ports needed; free SSL"
+
+- name: DuckDNS
+  provider: DuckDNS
+  category: cloud_infrastructure
+  website: https://duckdns.org
+  description: Free dynamic DNS service for home servers and projects
+  free_tier: "Up to 5 subdomains; API for updates; always free"
+
+- name: Freenom
+  provider: Freenom
+  category: cloud_infrastructure
+  website: https://freenom.com
+  description: Free domain registration for .tk, .ml, .ga, .cf, .gq TLDs
+  free_tier: "Free domains for 12 months; renewable; DNS management"
+
+- name: Vercel Postgres
+  provider: Vercel
+  category: data_storage
+  website: https://vercel.com/storage/postgres
+  description: Serverless PostgreSQL database optimized for the Vercel platform
+  free_tier: "256MB storage; 60 compute hours; included in Vercel free tier"
+
+- name: Vercel KV
+  provider: Vercel
+  category: data_storage
+  website: https://vercel.com/storage/kv
+  description: Durable Redis-compatible key-value store on Vercel
+  free_tier: "3K commands/day; 256MB storage; included in free tier"
+
+- name: Vercel Blob
+  provider: Vercel
+  category: data_storage
+  website: https://vercel.com/storage/blob
+  description: File storage optimized for the Vercel platform
+  free_tier: "Included in Vercel free tier; S3-compatible"
+
+- name: Notion API
+  provider: Notion
+  category: api_services
+  website: https://developers.notion.com
+  description: API for reading and writing Notion databases, pages, and blocks
+  free_tier: "Free with Notion account; 3 requests/second rate limit"
+
+- name: Airtable
+  provider: Airtable
+  category: data_storage
+  website: https://airtable.com
+  description: Spreadsheet-database hybrid with API access and automations
+  free_tier: "Unlimited bases; 1K records/base; 1GB attachments; 100 automations/month"
+
+- name: Baserow
+  provider: Baserow
+  category: data_storage
+  website: https://baserow.io
+  description: Open-source no-code database and Airtable alternative
+  free_tier: "3K rows; unlimited tables; API access; self-host unlimited"
+
+- name: NocoDB
+  provider: NocoDB
+  category: data_storage
+  website: https://nocodb.com
+  description: Open-source Airtable alternative that turns any database into a spreadsheet
+  free_tier: "Open-source self-host unlimited; cloud free tier available"
+
+- name: Cloudflare Workers AI
+  provider: Cloudflare
+  category: ai_llm
+  website: https://ai.cloudflare.com
+  description: Serverless AI inference at the edge with built-in models
+  free_tier: "10K neurons/day; text generation, translation, classification, image gen"
+
+- name: Unsplash API
+  provider: Unsplash
+  category: api_services
+  website: https://unsplash.com/developers
+  description: Free high-resolution photo API with millions of images
+  free_tier: "50 requests/hour; unlimited free photos; attribution required"
+
+- name: Pexels API
+  provider: Pexels
+  category: api_services
+  website: https://www.pexels.com/api
+  description: Free stock photos and videos API
+  free_tier: "200 requests/hour; unlimited free media; attribution appreciated"
+
+- name: NASA APIs
+  provider: NASA
+  category: api_services
+  website: https://api.nasa.gov
+  description: Open APIs for astronomy, Mars rover photos, near-Earth objects
+  free_tier: "1K requests/hour; APOD, Mars Rover, NEO, EPIC; always free"
+
+- name: Sheetson
+  provider: Sheetson
+  category: api_services
+  website: https://sheetson.com
+  description: Turn Google Sheets into a REST API instantly
+  free_tier: "1K rows per sheet; API access; always free"
+
+- name: JSON2Video
+  provider: JSON2Video
+  category: api_services
+  website: https://json2video.com
+  description: Programmatic video editing and generation API
+  free_tier: "Free tier available; no-code and API access"
+
+- name: Microlink
+  provider: Microlink
+  category: api_services
+  website: https://microlink.io
+  description: Website data extraction, screenshots, and link previews API
+  free_tier: "50 requests/day; screenshots; metadata extraction"
+
+- name: Rendi
+  provider: Rendi
+  category: api_services
+  website: https://rendi.dev
+  description: FFmpeg-as-a-Service API for video/audio processing
+  free_tier: "Monthly quota with 4 vCPUs; video encoding/transcoding"
+
+- name: Supportivekoala
+  provider: Supportivekoala
+  category: api_services
+  website: https://supportivekoala.com
+  description: Image generation from templates for social media and OG images
+  free_tier: "50 images/month; template-based generation"
+
+- name: KillBait API
+  provider: KillBait
+  category: api_services
+  website: https://killbait.com/api/doc
+  description: Clickbait detection API powered by AI
+  free_tier: "1 request/hour; 10 requests/day"
+
+- name: What The Diff
+  provider: What The Diff
+  category: api_services
+  website: https://whatthediff.ai
+  description: AI-powered PR descriptions and code review summaries
+  free_tier: "25K monthly tokens; ~10 PRs/month"
+
+- name: CloudAMQP
+  provider: CloudAMQP
+  category: automation_workflow
+  website: https://cloudamqp.com
+  description: RabbitMQ as a managed service for message queuing
+  free_tier: "1M messages/month; 20 concurrent connections; Little Lemur plan"
+
+- name: Synadia (NATS)
+  provider: Synadia
+  category: automation_workflow
+  website: https://synadia.com
+  description: Managed NATS.io messaging service for microservices
+  free_tier: "4K message size; 50 connections; 5GB/month data"
+
+- name: Zipcodebase
+  provider: Zipcodebase
+  category: api_services
+  website: https://zipcodebase.com
+  description: Zip/postal code API for 200+ countries with geolocation
+  free_tier: "5000 requests/month; global coverage"
+
+- name: Market Data API
+  provider: Market Data
+  category: api_services
+  website: https://marketdata.app
+  description: Financial market data API for stocks, options, and indices
+  free_tier: "100 daily API requests; real-time and historical data"
+
+- name: Earnings Feed
+  provider: Earnings Feed
+  category: api_services
+  website: https://earningsfeed.com/api
+  description: SEC filings API for earnings data and financial analysis
+  free_tier: "15 requests/minute; SEC filing data"
+
+- name: CoinGecko API
+  provider: CoinGecko
+  category: api_services
+  website: https://www.coingecko.com/en/api
+  description: Cryptocurrency data API with prices, market data, and history
+  free_tier: "10-30 calls/minute; 10K calls/month; all crypto data"
+
+- name: Financial Data API
+  provider: FinancialData
+  category: api_services
+  website: https://financialdata.net
+  description: Stock market and financial data API
+  free_tier: "300 requests/day; stock quotes and history"
+
+- name: Crystallize
+  provider: Crystallize
+  category: data_storage
+  website: https://crystallize.com
+  description: Headless PIM with ecommerce support and rich content modeling
+  free_tier: "Unlimited users; 1K items; 5GB/month bandwidth"
+
+- name: Cosmic
+  provider: Cosmic
+  category: data_storage
+  website: https://cosmicjs.com
+  description: Headless CMS with API-first content management
+  free_tier: "Free for personal developers; content API access"
+
+- name: Solo (Mozilla)
+  provider: Mozilla
+  category: cloud_infrastructure
+  website: https://soloist.ai
+  description: AI website creator with free custom domain
+  free_tier: "Free custom domain; AI-generated website; Mozilla backed"
+
+- name: Karbon Sites
+  provider: Karbon
+  category: developer_tools
+  website: https://karbonsites.space
+  description: AI site builder from text descriptions and sketches
+  free_tier: "5 generations/month; AI-powered design"
+
+- name: DhiWise
+  provider: DhiWise
+  category: developer_tools
+  website: https://dhiwise.com
+  description: Convert Figma designs to Flutter and React source code
+  free_tier: "Free code generation; Figma to code"
+
+- name: v0.dev
+  provider: Vercel
+  category: developer_tools
+  website: https://v0.dev
+  description: AI-powered React component generation with shadcn/ui
+  free_tier: "1200 starting credits; 200 monthly credits; always free"
+
+- name: Coolify
+  provider: Coolify
+  category: cloud_infrastructure
+  website: https://coolify.io
+  description: Open-source self-hostable Heroku/Netlify/Vercel alternative
+  free_tier: "Completely free self-hosted; unlimited apps; databases; SSL"
+
+- name: CapRover
+  provider: CapRover
+  category: cloud_infrastructure
+  website: https://caprover.com
+  description: Open-source PaaS for deploying apps with Docker
+  free_tier: "Completely free self-hosted; one-click apps; SSL; Docker"
+
+- name: Dokku
+  provider: Dokku
+  category: cloud_infrastructure
+  website: https://dokku.com
+  description: Open-source minimal PaaS — Docker-powered mini-Heroku
+  free_tier: "Completely free self-hosted; Heroku buildpacks; plugins"
+
+- name: AWS CodeCommit
+  provider: AWS
+  category: developer_tools
+  website: https://aws.amazon.com/codecommit
+  description: Managed Git repositories in AWS
+  free_tier: "5 users; 50GB storage; 10K Git requests/month; always free"
+
+- name: Azure Event Grid
+  provider: Microsoft Azure
+  category: automation_workflow
+  website: https://azure.microsoft.com/services/event-grid
+  description: Serverless event routing for reactive programming
+  free_tier: "100K operations/month; always free"
+
+- name: Azure Active Directory
+  provider: Microsoft Azure
+  category: api_services
+  website: https://azure.microsoft.com/services/active-directory
+  description: Identity and access management for cloud applications
+  free_tier: "500K objects; SSO; MFA; always free"
+
+- name: Azure IoT Hub
+  provider: Microsoft Azure
+  category: api_services
+  website: https://azure.microsoft.com/services/iot-hub
+  description: Managed IoT platform for device connectivity and telemetry
+  free_tier: "8000 messages/day; always free"
+
+- name: Oracle Cloud Monitoring
+  provider: Oracle Cloud
+  category: api_services
+  website: https://www.oracle.com/devops/monitoring
+  description: Infrastructure and application monitoring on Oracle Cloud
+  free_tier: "500M ingestion datapoints; 1B retrieval datapoints; always free"
+
+- name: IBM API Connect
+  provider: IBM
+  category: api_services
+  website: https://www.ibm.com/products/api-connect
+  description: API management platform for creating, securing, and sharing APIs
+  free_tier: "50K API calls/month; Lite plan"
+
+- name: Brainboard
+  provider: Brainboard
+  category: automation_workflow
+  website: https://brainboard.co
+  description: Visual Terraform and infrastructure design tool
+  free_tier: "Visual builder; Terraform code generation; collaboration"
+
+- name: Retool
+  provider: Retool
+  category: developer_tools
+  website: https://retool.com
+  description: Low-code platform for building internal tools with drag-and-drop
+  free_tier: "Free tier available; 5 users; unlimited apps"
+
+- name: Adalo
+  provider: Adalo
+  category: developer_tools
+  website: https://adalo.com
+  description: No-code app builder for iOS, Android, and web
+  free_tier: "Free tier with core features; app building and testing"
+
+- name: Supabase Realtime
+  provider: Supabase
+  category: api_services
+  website: https://supabase.com/realtime
+  description: Real-time subscriptions for Postgres changes via WebSocket
+  free_tier: "200 concurrent connections; broadcast and presence"
+
+- name: Inngest
+  provider: Inngest
+  category: automation_workflow
+  website: https://inngest.com
+  description: Event-driven serverless queues and workflow orchestration
+  free_tier: "25K function runs/month; step functions; retries; scheduling"
+
+- name: Trigger.dev
+  provider: Trigger.dev
+  category: automation_workflow
+  website: https://trigger.dev
+  description: Open-source background jobs and workflow automation for developers
+  free_tier: "25K runs/month; 50K events; open-source self-host unlimited"
+
+- name: Vercel Cron Jobs
+  provider: Vercel
+  category: automation_workflow
+  website: https://vercel.com/docs/cron-jobs
+  description: Scheduled serverless function execution on Vercel
+  free_tier: "2 cron jobs; daily minimum interval; included in free tier"
+
+- name: Cron-job.org
+  provider: Cron-job.org
+  category: automation_workflow
+  website: https://cron-job.org
+  description: Free online cron job scheduling service
+  free_tier: "Unlimited cron jobs; 1-minute intervals; monitoring; always free"
+
+- name: EasyCron
+  provider: EasyCron
+  category: automation_workflow
+  website: https://easycron.com
+  description: Cron job scheduling service with monitoring and logging
+  free_tier: "1 cron job; 20-minute minimum interval; email notification"
+
+- name: Hasura
+  provider: Hasura
+  category: api_services
+  website: https://hasura.io
+  description: Instant GraphQL and REST APIs on your databases
+  free_tier: "1GB data passthrough/month; 60 requests/minute; always free"
+
+- name: Grafbase
+  provider: Grafbase
+  category: api_services
+  website: https://grafbase.com
+  description: Serverless GraphQL backend with edge caching and auth
+  free_tier: "Free tier available; edge deployment; TypeScript resolvers"
+
+- name: Stellate
+  provider: Stellate
+  category: api_services
+  website: https://stellate.co
+  description: GraphQL CDN and edge caching for API performance
+  free_tier: "Free tier; edge caching; analytics; rate limiting"
+
+- name: PokeAPI
+  provider: PokeAPI
+  category: api_services
+  website: https://pokeapi.co
+  description: RESTful API for Pokemon data — great for learning and prototyping
+  free_tier: "Completely free; no auth required; unlimited requests"
+
+- name: JSONPlaceholder
+  provider: JSONPlaceholder
+  category: api_services
+  website: https://jsonplaceholder.typicode.com
+  description: Fake REST API for testing and prototyping
+  free_tier: "Completely free; no auth; 6 resources; always available"
+
+- name: Disease.sh
+  provider: Disease.sh
+  category: api_services
+  website: https://disease.sh
+  description: Open disease data API with COVID-19 and influenza data
+  free_tier: "Completely free; open-source; no auth required"
+
+- name: RandomUser.me
+  provider: RandomUser
+  category: api_services
+  website: https://randomuser.me
+  description: Random user generator API for testing and prototyping
+  free_tier: "Completely free; unlimited requests; multiple nationalities"
+
+- name: IP-API
+  provider: IP-API
+  category: api_services
+  website: https://ip-api.com
+  description: IP geolocation API with ISP and organization data
+  free_tier: "45 requests/minute; non-commercial use; batch endpoint"
+
+- name: Mapbox
+  provider: Mapbox
+  category: api_services
+  website: https://mapbox.com
+  description: Maps, geocoding, routing, and location search APIs
+  free_tier: "50K map loads/month; 100K geocoding requests; 100K directions"
+
+- name: Leaflet
+  provider: OpenStreetMap
+  category: api_services
+  website: https://leafletjs.com
+  description: Open-source JavaScript library for interactive maps
+  free_tier: "Completely free; open-source; OSM tiles free"
+
+- name: OpenCage Geocoding
+  provider: OpenCage
+  category: api_services
+  website: https://opencagedata.com
+  description: Forward and reverse geocoding API using open data
+  free_tier: "2500 requests/day; no credit card required"
+
+- name: Doppio
+  provider: Doppio
+  category: api_services
+  website: https://doppio.sh
+  description: PDF and screenshot generation API from HTML
+  free_tier: "400 documents/month; always free"
+
+- name: Pdfendpoint
+  provider: Pdfendpoint
+  category: api_services
+  website: https://pdfendpoint.com
+  description: HTML/URL to PDF conversion API
+  free_tier: "100 conversions/month; always free"
+
+- name: Robohash
+  provider: Robohash
+  category: api_services
+  website: https://robohash.org
+  description: Generate unique robot/monster/alien images from any text
+  free_tier: "Completely free; unlimited requests; multiple sets"
+
+- name: DiceBear
+  provider: DiceBear
+  category: api_services
+  website: https://dicebear.com
+  description: Avatar generation API with multiple art styles
+  free_tier: "Completely free; open-source; unlimited requests"
+
+- name: Vercel Analytics
+  provider: Vercel
+  category: api_services
+  website: https://vercel.com/analytics
+  description: Real-time web analytics and speed insights for Vercel projects
+  free_tier: "Included in Vercel free tier; basic analytics"
+
+- name: Plunk
+  provider: Plunk
+  category: api_services
+  website: https://useplunk.com
+  description: Open-source email platform for transactional and marketing emails
+  free_tier: "Open-source self-host unlimited; cloud plan available"
+
+- name: Brevo (Sendinblue)
+  provider: Brevo
+  category: api_services
+  website: https://brevo.com
+  description: All-in-one marketing platform with email, SMS, and chat
+  free_tier: "300 emails/day; unlimited contacts; email API"
+
+- name: EmailOctopus
+  provider: EmailOctopus
+  category: api_services
+  website: https://emailoctopus.com
+  description: Email marketing platform with automation
+  free_tier: "2500 subscribers; 10K emails/month; basic automation"
+
+- name: Buttondown
+  provider: Buttondown
+  category: api_services
+  website: https://buttondown.email
+  description: Newsletter platform with API and automation
+  free_tier: "100 subscribers; unlimited emails; API access; always free"
+
+- name: Docusaurus
+  provider: Meta
+  category: developer_tools
+  website: https://docusaurus.io
+  description: Static site generator for documentation websites (React-based)
+  free_tier: "Completely free; open-source; MDX support; versioning"
+
+- name: Nextra
+  provider: Vercel
+  category: developer_tools
+  website: https://nextra.site
+  description: Next.js-based documentation site framework
+  free_tier: "Completely free; open-source; MDX; full-text search"
+
+- name: ReadMe
+  provider: ReadMe
+  category: developer_tools
+  website: https://readme.com
+  description: Interactive API documentation with developer hubs
+  free_tier: "Free for open-source projects; API explorer; markdown docs"
+
+- name: Swagger/OpenAPI
+  provider: SmartBear
+  category: developer_tools
+  website: https://swagger.io
+  description: API design, documentation, and testing tools
+  free_tier: "Open-source tools free; Swagger Editor; Swagger UI"
+
+- name: LaunchDarkly
+  provider: LaunchDarkly
+  category: api_services
+  website: https://launchdarkly.com
+  description: Feature flag management for progressive delivery
+  free_tier: "1K MAU; 2 environments; unlimited flags; always free"
+
+- name: Flagsmith
+  provider: Flagsmith
+  category: api_services
+  website: https://flagsmith.com
+  description: Open-source feature flag and remote config service
+  free_tier: "50K requests/month; open-source self-host unlimited"
+
+- name: Unleash
+  provider: Unleash
+  category: api_services
+  website: https://getunleash.io
+  description: Open-source feature toggle management system
+  free_tier: "Open-source self-host unlimited; 2 environments"
+
+- name: GrowthBook
+  provider: GrowthBook
+  category: api_services
+  website: https://growthbook.io
+  description: Open-source feature flags and A/B testing platform
+  free_tier: "Open-source self-host unlimited; cloud free for small teams"
+
+- name: Sentry (Performance)
+  provider: Sentry
+  category: api_services
+  website: https://sentry.io/for/performance
+  description: Application performance monitoring with distributed tracing
+  free_tier: "10M tracing spans; included in Sentry free tier"
+
+- name: OpenPanel
+  provider: OpenPanel
+  category: api_services
+  website: https://openpanel.dev
+  description: Open-source analytics alternative to Mixpanel/Amplitude
+  free_tier: "Open-source self-host unlimited; real-time analytics"
+
+- name: Matomo
+  provider: Matomo
+  category: api_services
+  website: https://matomo.org
+  description: Open-source Google Analytics alternative with full data ownership
+  free_tier: "Open-source self-host unlimited; cloud starts at $23/month"
+
+- name: Swetrix
+  provider: Swetrix
+  category: api_services
+  website: https://swetrix.com
+  description: Open-source privacy-focused web analytics
+  free_tier: "5K events/month; open-source self-host unlimited"
+
+- name: Pirsch Analytics
+  provider: Pirsch
+  category: api_services
+  website: https://pirsch.io
+  description: Cookie-free, privacy-friendly web analytics
+  free_tier: "2.5K pageviews/month; 1 website; API access"
