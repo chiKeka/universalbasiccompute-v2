@@ -1,8 +1,9 @@
 Show the user their current UBC setup status.
 
-1. Read `.ubc/state.json`
-2. Show which services are provisioned and which aren't
-3. Show what credentials are stored
-4. Show the active recipe (if any)
-5. Show the project status
-6. Suggest next steps based on what's missing
+1. Call `ubc_domains` to list all available domains
+2. Call `ubc_status` to get the full project state
+3. Show which resources are set up and which aren't, organized by domain
+4. Show what access credentials are stored (call `ubc_get_access` with masked values)
+5. Show the active pattern (if any)
+6. Show the project status
+7. Suggest next steps based on what's missing

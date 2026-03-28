@@ -1,0 +1,21 @@
+# UBC Protocol — Domain Schema
+# A domain is a category of resources that can be assembled into outcomes.
+# Compute, education, health, finance, etc.
+#
+# When the discovery agent creates a new domain, it writes a domain.yaml
+# following this structure into domains/{id}/domain.yaml.
+
+required:
+  id: string                # Slug identifier (e.g., "compute", "education")
+  name: string              # Human-readable name
+  description: string       # What this domain covers
+
+optional:
+  version: string           # Domain catalog version
+  created_at: string        # ISO date
+  categories: list[string]  # Resource groupings within this domain
+  resource_types: list      # What kinds of resources exist (service, course, tool, etc.)
+  access_types: list        # How access is granted (api_key, enrollment, open, etc.)
+  assembly_verbs: list      # What actions agents perform (provision, enroll, build, etc.)
+  outcome_types: list       # What gets produced (deployed_app, learning_path, etc.)
+  maintainer: string        # Which agent manages this domain

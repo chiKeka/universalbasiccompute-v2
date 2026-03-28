@@ -1,0 +1,37 @@
+id: compute
+name: Cloud Compute
+description: >
+  Free-tier cloud services for building and deploying applications.
+  Services across AI, infrastructure, storage, automation, APIs, and dev tools.
+version: 0.2.0
+created_at: "2026-03-24"
+categories:
+  - ai_llm
+  - cloud_infrastructure
+  - data_storage
+  - automation_workflow
+  - api_services
+  - developer_tools
+resource_types:
+  - service
+  - api
+  - platform
+  - tool
+access_types:
+  - api_key
+  - api_token
+  - connection_string
+  - oauth
+  - account
+assembly_verbs:
+  - provision
+  - configure
+  - deploy
+  - wire
+  - test
+outcome_types:
+  - deployed_app
+  - api_endpoint
+  - database
+  - workflow
+maintainer: discovery

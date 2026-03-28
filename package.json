@@ -1,8 +1,8 @@
 {
   "name": "universal-basic-compute",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "DIY agent toolkit for provisioning free-tier cloud services",
+  "description": "Domain-agnostic agent toolkit for assembling free resources into outcomes",
   "scripts": {
     "start": "pnpm --filter @ubcv2/runtime exec tsx src/index.ts start",
     "agents": "pnpm --filter @ubcv2/runtime exec tsx src/index.ts agents",

@@ -1,5 +1,5 @@
 /**
- * Template loader — reads YAML service definitions from the /services/ directory.
+ * Template loader — reads YAML resource definitions from /domains/compute/resources/.
  */
 
 import { readFileSync, existsSync, readdirSync } from "node:fs";
@@ -9,8 +9,8 @@ import { parse } from "yaml";
 import type { ServiceTemplate } from "./schema.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// Service definitions live at the repo root /services/
-const TEMPLATES_DIR = join(__dirname, "..", "..", "..", "..", "..", "services");
+// Resource definitions live at /domains/compute/resources/
+const TEMPLATES_DIR = join(__dirname, "..", "..", "..", "..", "..", "domains", "compute", "resources");
 
 export function loadTemplate(serviceName: string): ServiceTemplate | null {
   const fileName = `${serviceName.toLowerCase()}.yaml`;

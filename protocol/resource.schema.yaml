@@ -1,0 +1,38 @@
+# UBC Protocol — Resource Schema
+# A resource is anything free or accessible that can be assembled into an outcome.
+# Cloud service, online course, diagnostic tool, open dataset, community.
+#
+# Agents creating new resources must follow this structure.
+# Not every field applies to every domain — use what's relevant.
+
+required:
+  name: string              # Human-readable name
+  provider: string          # Who offers it
+  category: string          # Domain-specific grouping
+  website: string           # Main URL
+  description: string       # One-sentence explanation
+  free_tier: string | list  # What you get for free (string for brief, list for detailed)
+
+optional:
+  access:                   # How to get started with this resource
+    url: string             # Signup/enrollment/access URL
+    method: string          # signup, enroll, download, open, referral
+    requires: string        # Prerequisite (e.g., "GitHub account")
+    steps: list[string]     # Step-by-step instructions
+
+  tokens:                   # Access tokens, credentials, enrollment IDs
+    - name: string          # e.g., GITHUB_TOKEN, enrollment_id
+      env_var: string       # Environment variable name
+      type: string          # api_key, token, enrollment, account, certificate, other
+      sensitive: boolean    # True for secrets that must be encrypted
+      optional: boolean
+      how_to_get:
+        url: string
+        steps: list[string]
+      validation: string    # Regex or verification method
+
+  provides: list[string]    # What capabilities this resource gives you
+  depends_on: list[string]  # Other resources needed first
+  limits: list              # Usage caps, expiry, quotas
+  notes: string             # Gotchas, warnings
+  verified_at: string       # ISO date of last verification

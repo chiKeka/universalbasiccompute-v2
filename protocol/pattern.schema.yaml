@@ -1,0 +1,27 @@
+# UBC Protocol — Pattern Schema
+# A pattern is a known-good combination of resources that produces an outcome.
+# Deployed app, learning path, care plan, research pipeline.
+#
+# Agents creating new patterns must follow this structure.
+
+required:
+  id: string                # Slug identifier (e.g., "blog-ai", "learn-data-science")
+  name: string              # Human-readable name
+  description: string       # What this pattern achieves
+  resources:                # Resources needed
+    - resource: string      # Resource name (must exist in the domain catalog)
+      role: string          # What it does in this pattern
+      reason: string        # Why this resource and not an alternative
+
+optional:
+  icon: string              # Emoji or icon
+  outcome: string           # What the person gets when the pattern is complete
+  steps:                    # Ordered assembly steps (if not present, the assembler improvises)
+    - name: string
+      description: string
+      resource: string      # Which resource this step uses
+      verification: string  # How to confirm this step succeeded
+  estimated_effort: string  # Time/cost estimate
+  prerequisites: list       # What the person should know or have before starting
+  alternatives: list        # Other patterns that achieve similar outcomes
+  warnings: list[string]    # Gotchas

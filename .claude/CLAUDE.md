@@ -1,14 +1,14 @@
-# Universal Basic Compute — Agent Toolkit
+# Universal Basic Compute — Agent Toolkit (v0.3.0)
 
-You are helping a user with the **UBC Agent Toolkit** — a collection of autonomous agents that provision and assemble free-tier cloud services into working projects.
+You are helping a user with the **UBC Agent Toolkit** — a domain-agnostic protocol that organizes free-tier resources into domains and helps users combine them into working projects.
 
 ## What This Repo Is
 
 This repo contains **pre-built agents** that:
-1. **Plan** which free-tier services to combine for a project
-2. **Guide** users through creating accounts and getting API keys
-3. **Assemble** provisioned services into deployed projects
-4. **Maintain** the catalog of available free-tier services
+1. **Plan** which free-tier resources to combine for a project within a domain
+2. **Guide** users through gaining access (enrollment, API keys, accounts, etc.)
+3. **Assemble** provisioned resources into deployed projects
+4. **Discover** new resources and create new domains
 5. **Set up** agent infrastructure (OpenClaw, etc.) on the user's behalf
 
 ## How To Help The User
@@ -16,7 +16,7 @@ This repo contains **pre-built agents** that:
 When a user opens this repo and asks for help:
 
 1. **Check state first**: Read `.ubc/state.json` (if it exists) to see what's already configured
-2. **If new user**: Walk them through setup — explain what UBC is, show them the recipes, guide them through provisioning
+2. **If new user**: Walk them through setup — explain what UBC is, show them the available domains and patterns, guide them through access setup
 3. **If returning user**: Pick up where they left off based on state
 
 ## Available Agents (in `/agents/`)
@@ -24,34 +24,26 @@ When a user opens this repo and asks for help:
 | Agent | Purpose | When to use |
 |-------|---------|-------------|
 | **master** | Orchestrates everything | Default — delegates to others |
-| **planner** | Selects services for a goal | When user describes a project |
-| **provisioner** | Guides through account signup | When setting up a service |
-| **assembler** | Builds and deploys projects | After all services provisioned |
-| **catalog** | Updates service catalog | When checking for new services |
+| **planner** | Selects resources for a goal within a domain | When user describes a project |
+| **guide** | Walks through resource access/enrollment | When setting up a resource |
+| **assembler** | Builds and deploys projects | After all resources are accessible |
+| **discovery** | Finds new resources, creates new domains | When checking for new resources or no domain fits |
 | **infra** | Sets up agent infrastructure | When user wants OpenClaw/etc |
 
-## Available Services (in `/services/`)
+## Domains (in `/domains/`)
 
-Each YAML file has: signup steps, credential instructions, free-tier limits.
-- **GitHub** — Code hosting, CI/CD (2000 Actions min/mo)
-- **Vercel** — Hosting, serverless (100GB bandwidth/mo)
-- **Supabase** — Postgres, Auth, Edge Functions (500MB DB)
-- **OpenAI** — GPT, embeddings ($5 free credits)
-- **Cloudflare** — Workers, Pages, R2 (100k req/day)
-- **Netlify** — Hosting, forms, edge (100GB bandwidth/mo)
-- **Render** — Web services, Postgres (750 hrs/mo)
-- **Neon** — Serverless Postgres (512MB, branching)
-- **Resend** — Email API (3000 emails/mo)
-- **Upstash** — Serverless Redis (10k commands/day)
+Resources are organized into domains. Each domain has:
+- `domain.yaml` — metadata, resource types, access types
+- `resources/` — individual resource definitions (YAML)
+- `patterns/` — proven combinations of resources (YAML)
 
-## Available Recipes (in `/recipes/`)
+For example, `domains/compute/resources/` contains cloud service definitions and `domains/compute/patterns/` contains project blueprints like blog-ai, saas-starter, etc.
 
-Pre-built project blueprints:
-- `blog-ai` — Blog with AI summarization
-- `portfolio` — Personal portfolio site
-- `saas-starter` — SaaS template with auth
-- `ai-chatbot` — GPT-powered chatbot
-- `api-backend` — REST API on Cloudflare Workers
+Use `ubc_domains` to list available domains. Use `ubc_catalog` to browse resources within a domain.
+
+## Protocol (in `/protocol/`)
+
+YAML schemas that define the structure of domain.yaml, resource definitions, and pattern definitions. All new content must follow these schemas.
 
 ## MCP Tools Server (in `/tools/`)
 
@@ -69,18 +61,18 @@ A standalone MCP server exposing all UBC capabilities. Connect from any agent pl
 }
 ```
 
-**Tools available**: `ubc_catalog`, `ubc_service_guide`, `ubc_recipes`, `ubc_recipe_detail`, `ubc_status`, `ubc_update_status`, `ubc_store_credential`, `ubc_get_credentials`
+**Tools available**: `ubc_domains`, `ubc_catalog`, `ubc_resource_guide`, `ubc_patterns`, `ubc_create_domain`, `ubc_status`, `ubc_update_status`, `ubc_store_access`, `ubc_get_access`
 
 ## State Tracking
 
-- `.ubc/state.json` — What services are provisioned, active recipe, project status
-- `.ubc/credentials/` — Stored API keys and tokens (gitignored)
+- `.ubc/state.json` — What resources are set up, active pattern, project status
+- `.ubc/access/{domain}/` — Stored access credentials per domain (gitignored)
 
 ## Guiding A Non-Technical User
 
 Assume the user is **not technical**. When helping them:
 - Use plain, simple language
-- Explain what each service does and why they need it
+- Explain what each resource does and why they need it
 - Give step-by-step browser instructions ("Click the blue button that says...")
 - Celebrate small wins ("Your GitHub account is ready!")
 - Never show raw JSON/code unless they ask

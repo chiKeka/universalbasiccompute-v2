@@ -1,7 +1,7 @@
 /**
  * Legacy in-memory catalog for the CLI.
- * The canonical catalog is in /services/catalog.yaml (400+ services)
- * and /services/*.yaml (10 detailed guides), loaded by /tools/src/catalog.ts.
+ * The canonical catalog is in /domains/compute/resources/ (resource definitions)
+ * loaded by /tools/src/catalog.ts.
  * This file exists for backward compatibility with CLI commands.
  */
 
